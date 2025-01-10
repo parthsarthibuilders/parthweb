@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.gradientText {
+  background: -webkit-linear-gradient(315deg, #ffd334 0%, #ffae00 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .slider-arrow{
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 106, 194, .2);
+} */
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 49px !important;
+  width: 30px !important;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  /* color: black!important; */
+  /* border: 1px solid black!important; */
+  border-radius: 50% !important;
+  background-color: #352d60 !important;
+  outline: none;
+  background: transparent;
+}
+
+
+
+
+.animated-gradient {
+  height: 24rem;
+  /* h-96 in Tailwind is 24rem */
+  border-radius: 0.5rem;
+  /* rounded-lg in Tailwind is 0.5rem */
+  background: linear-gradient(to bottom right, #CC9B18, white);
+  background-size: 200% 200%;
+  /* Expands the gradient for smooth animation */
+  animation: gradient-animation 4s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  0% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.bgprofile {
+  background-image: url("../public/img2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image-container {
+  perspective: 1000px;
+  /* Perspective for the 3D effect */
+  width: auto;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+
+}
+
+.image {
+  transition: transform 0.1s ease-out;
+  /* Smooth rotation effect */
+  transform-origin: center;
+  /* Rotation origin */
+  will-change: transform;
+  /* Performance optimization */
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #cc9c183d; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CC9B18; 
+  border-radius: 10px;
+}
+
