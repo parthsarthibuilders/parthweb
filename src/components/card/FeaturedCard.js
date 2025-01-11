@@ -1,6 +1,4 @@
 "use client";
-import parthCr from "@/public/Parth-Crown-1-1024x1024.jpg";
-import logo from "@/public/annother-parth.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { Home, Maximize2 } from "lucide-react";

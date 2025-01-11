@@ -4,13 +4,14 @@ const ProjectSchema = new Schema(
     {
         category: {
             type: [String],
-            required: true,
+           
             default: "Not-Provided"
         },
 
         price: {
             type: String,
-            required: true,
+            
+            default: "Not Provided"
         },
 
         title: {
@@ -26,27 +27,28 @@ const ProjectSchema = new Schema(
         },
         content: {
             type: String,
-            required: true
+            
+            default: "Not Provided"
         },
         location: {
             type: String,
-            required: true
+            
         },
         projectSize: [
             {
-                size: { type: String, required: true },
-                image: { type: [String], required: true }
+                size: { type: String,  },
+                image: { type: [String],  }
             }
         ],
         bhk: [
             {
-                bhk: { type: String, required: true },
-                image: { type: [String], required: true }
+                bhk: { type: String, },
+                image: { type: [String],  }
             }
         ],
         isFeatured: {
             type: Boolean,
-            required: true,
+            
             default: false
         },
         propertyType: {
@@ -99,6 +101,6 @@ const ProjectSchema = new Schema(
     { timestamps: true }
 );
 
-const ProjectModel = mongoose.models.project6 || mongoose.model("project6", ProjectSchema);
+const ProjectModel = mongoose.models.project66 || mongoose.model("project66", ProjectSchema);
 
 export default ProjectModel;

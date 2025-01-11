@@ -148,7 +148,7 @@ export default function Page() {
 
   // Validate form
   useEffect(() => {
-    setIsFormValid(!!formData.title && !!formData.slug && !!formData.category && !!formData.price && !!formData.content && !!formData.location);
+    setIsFormValid(!!formData.title && !!formData.slug);
   }, [formData]);
 
   // Handle form submission
@@ -468,7 +468,7 @@ export default function Page() {
                         type="file"
                         id="logo"
                         name="logo"
-                        accept="logo/*"
+                        accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         className="hidden"
                       />
@@ -515,7 +515,7 @@ export default function Page() {
                         type="file"
                         id="image"
                         name="image"
-                        accept="image/*"
+                        accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         className="hidden"
                       />
@@ -568,7 +568,7 @@ export default function Page() {
                         type="file"
                         id="gallery"
                         name="gallery"
-                        accept="image/*"
+                       accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         multiple
                         className="hidden"
@@ -613,7 +613,7 @@ export default function Page() {
                         type="file"
                         id="sitePlan"
                         name="sitePlan"
-                        accept="application/pdf,image/*" // Adjust MIME types as needed
+                        accept="application/pdf,image/*,image/heic" // Adjust MIME types as needed
                         onChange={handleFileChange}
                         className="hidden"
                       />
