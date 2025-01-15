@@ -9,7 +9,8 @@ const MyImageGallery = ({ images }) => {
     // Ensure the images are in the format expected by ImageGallery
     const galleryItems = images.map(image => ({
         original: image, // Full image URL
-        thumbnail: image, // Thumbnail image URL (using the same URL for simplicity)
+        thumbnail: image,
+        loading: "lazy"
     }));
 
     return (
