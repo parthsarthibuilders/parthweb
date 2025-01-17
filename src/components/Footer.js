@@ -96,7 +96,7 @@ export default function Footer() {
 
                             </div>
                             <h4 className="font-semibold text-lg text-white">Phone Number</h4>
-                            <p className=" text-sm text-white">+91 9024965965</p>
+                            <p className=" text-sm text-white">+91 9024 - 965 - 965</p>
 
                         </div>
                         <div className="col-span-1 py-4 flex items-center text-center   flex-col justify-center">
@@ -136,10 +136,10 @@ export default function Footer() {
                             <Link className="inline-block mb-3" href="/"><Image alt='' src={Logo} className="md:max-w-[90px] max-w-[50px]" /></Link>
                             <p className="text-white text-sm mb-3">Parth Sarthi Builders has established itself as a prominent name in the construction and real estate industry in Jaipur over the past two decades with its exceptional development projects.</p>
                             <div className="flex items-center  space-x-2">
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur'><Facebook size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur'><Instagram size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur'><Youtube size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur'><Linkedin size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank"><Facebook size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.instagram.com/parthsarthi_jaipur/?__pwa=1#' target="_blank"><Instagram size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.youtube.com/@parthsarthi_jaipur' target="_blank"><Youtube size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.linkedin.com/company/parth-sarthi-buildestate-private-limited/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BnHRcI0F6TQaKKgocvpmI9w%3D%3D' target="_blank"><Linkedin size={14} /></Link>
 
                             </div>
                         </div>

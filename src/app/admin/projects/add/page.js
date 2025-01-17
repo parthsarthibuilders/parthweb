@@ -17,7 +17,8 @@ export default function Page() {
   // State to store form data
   const [formData, setFormData] = useState({
     category: "",
-    price: "",
+    semifurnishedprice: "",
+    fullfurnishedprice:"",
     title: "",
     slug: "",
     content: "",
@@ -224,7 +225,8 @@ export default function Page() {
         toast.success("Project successfully created!");
         setFormData({
           category: "",
-          price: "",
+          semifurnishedprice: "",
+          fullfurnishedprice:"",
           title: "",
           slug: "",
           content: "",
@@ -778,15 +780,29 @@ export default function Page() {
               </div>
 
               <div className="sm:col-span-6 col-span-12">
-                <label htmlFor="price" className="block text-[12px] text-gray-700">
-                  Price <span className=" text-red-600">*</span>
+                <label htmlFor="semifurnishedprice" className="block text-[12px] text-gray-700">
+                Semi Furnished price <span className=" text-red-600">*</span>
                 </label>
                 <input
                   type="number"
-                  name="price"
-                  value={formData.price}
+                  name="semifurnishedprice"
+                  value={formData.semifurnishedprice}
                   onChange={handleChange}
-                  placeholder="Enter Price"
+                  placeholder="Enter Semifurnished price"
+                  className="block w-full px-2 py-2 text-gray-500 bg-white border border-gray-200 placeholder:text-gray-400 focus:border-[#29234b] focus:outline-none focus:ring-[#29234b] sm:text-sm"
+                />
+              </div>
+
+              <div className="sm:col-span-6 col-span-12">
+                <label htmlFor="fullfurnishedprice" className="block text-[12px] text-gray-700">
+                Full Furnished price <span className=" text-red-600">*</span>
+                </label>
+                <input
+                  type="number"
+                  name="fullfurnishedprice"
+                  value={formData.fullfurnishedprice}
+                  onChange={handleChange}
+                  placeholder="Enter Fullfurnished price"
                   className="block w-full px-2 py-2 text-gray-500 bg-white border border-gray-200 placeholder:text-gray-400 focus:border-[#29234b] focus:outline-none focus:ring-[#29234b] sm:text-sm"
                 />
               </div>
@@ -827,7 +843,7 @@ export default function Page() {
 
               <div className="sm:col-span-6 col-span-12">
                 <label htmlFor="AvailablePlot" className="block text-[12px] text-gray-700">
-                  Available Plot
+                  Available Unit
                 </label>
                 <input
                   type="number"

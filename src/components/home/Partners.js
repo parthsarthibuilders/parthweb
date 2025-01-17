@@ -9,7 +9,13 @@ export default function Partners() {
         'https://parthsarthibuilder.com/old/wp-content/uploads/2024/02/926_tata.jpg',
         'https://parthsarthibuilder.com/old/wp-content/uploads/2024/02/Aquaguard-Logo.webp',
         'https://parthsarthibuilder.com/old/wp-content/uploads/2024/02/unnamed.png',
-        'https://parthsarthibuilder.com/old/wp-content/uploads/2024/02/jaguar-experience-bathing-logo-234FD5BFEF-seeklogo.com_.png'
+        'https://parthsarthibuilder.com/old/wp-content/uploads/2024/02/jaguar-experience-bathing-logo-234FD5BFEF-seeklogo.com_.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrSWq4uu0dFWR0GHddVy-Vw0TJSYJCyDCcRw&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjPgZd3THLosh8VuZDaE8mlL8PdD_wP9tfuQ&s',
+        'https://d199amilqw5tyr.cloudfront.net/wp-content/uploads/2024/04/Ultratech_Cement_Logo.svg_.png',
+        'https://download.logo.wine/logo/Anchor_Electricals_Pvt._Ltd./Anchor_Electricals_Pvt._Ltd.-Logo.wine.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2bHAEyiq0TnJzLt0YMrO34puvCm1lTfrEw&s',
+        'https://www.thereportingtoday.com/wp-content/uploads/2023/11/JSW-Paints-Logo.jpg'
         // Add more links here if needed (from the remaining HTML elements)
     ];
     return (

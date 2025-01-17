@@ -54,7 +54,7 @@ export default function Reviews() {
     return (
         <section className="py-10">
             <div className="container flex flex-col items-center max-w-[90%] mx-auto relative">
-                <p className="bg-gradient-to-r animate-bounce mb-2 font-semibold inline-block px-5 py-1 text-sm rounded-full text-white from-[#DAB221] to-[#B07C0A]">ParthSarthi Developers</p>
+                <p className="bg-gradient-to-r animate-bounce mb-2 font-semibold inline-block px-5 py-1 text-sm rounded-full text-white from-[#DAB221] to-[#B07C0A]">ParthSarthi Builders</p>
                 <h2 className="text-3xl mb-4 font-light text-[#2d2849]">Our <span className="font-bold">Testimonials</span></h2>
                 <div className="w-full">
                     {isMounted && !loading ? (

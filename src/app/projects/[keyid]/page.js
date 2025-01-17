@@ -38,7 +38,7 @@ export default function SingleProject({ params }) {
     const [filteredImages, setFilteredImages] = useState([]);
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedBhk, setSelectedBhk] = useState("");
-
+    const [filteredSizes, setFilteredSizes] = useState([]);
     useEffect(() => {
         const fetchProjectData = async () => {
             try {
@@ -76,9 +76,19 @@ export default function SingleProject({ params }) {
                 if (bhkObj) {
                     // Intersection of current images and BHK images
                     newImages = newImages.filter((img) => bhkObj.image.includes(img));
+                    
+                    // Update available sizes based on selected BHK
+                    const bhkSizes = project.projectSize.filter((size) =>
+                        size.image.some((img) => bhkObj.image.includes(img))
+                    );
+                    setFilteredSizes(bhkSizes);
                 } else {
                     newImages = []; // No matching BHK
+                    setFilteredSizes([]); // Clear sizes
                 }
+            } else {
+                // If no BHK is selected, reset sizes
+                setFilteredSizes(project.projectSize);
             }
 
             setFilteredImages(newImages);
@@ -136,20 +146,23 @@ export default function SingleProject({ params }) {
                             <div className="flex justify-end  items-center">
                                 <div className="flex gap-6 bg-[#fff5e4] p-2 rounded-b-lg shadow-md">
 
+                                <div className="flex justify-end items-center">
+                                <div className="flex gap-6 bg-[#fff5e4] p-2 rounded-b-lg shadow-md">
+                                    {/* Size Filter */}
                                     <div className="relative w-1/2">
                                         <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="size-select">
                                             Select Size
                                         </label>
                                         <select
                                             id="size-select"
-                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none "
+                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
                                             value={selectedSize}
                                             onChange={(e) => setSelectedSize(e.target.value)}
                                         >
                                             <option value="" className="text-gray-400">
                                                 All Size
                                             </option>
-                                            {project.projectSize.map((size) => (
+                                            {filteredSizes.map((size) => (
                                                 <option key={size.size} value={size.size}>
                                                     {size.size} Sq.ft
                                                 </option>
@@ -157,14 +170,14 @@ export default function SingleProject({ params }) {
                                         </select>
                                     </div>
 
-
+                                    {/* BHK Filter */}
                                     <div className="relative w-1/2">
                                         <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="bhk-select">
                                             Select BHK
                                         </label>
                                         <select
                                             id="bhk-select"
-                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none "
+                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
                                             value={selectedBhk}
                                             onChange={(e) => setSelectedBhk(e.target.value)}
                                         >
@@ -178,6 +191,8 @@ export default function SingleProject({ params }) {
                                             ))}
                                         </select>
                                     </div>
+                                </div>
+                                </div>
                                 </div>
 
                                 {/* <button

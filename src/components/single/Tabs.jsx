@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Building2, PencilRuler, Building, ChartPie, HousePlus } from 'lucide-react';
 import Image from 'next/image';
+import PriceFilter from '../Pricefilter/PriceFilter';
 const Tabs = ({ project }) => {
     const [activeTab, setActiveTab] = useState(0);
 
@@ -57,7 +58,7 @@ const Tabs = ({ project }) => {
                 {/* Tab 1 Content */}
                 {activeTab === 0 && (
                     <div>
-                        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
                                 <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
                                     <Building2 size={25} className="text-white" />
@@ -67,28 +68,7 @@ const Tabs = ({ project }) => {
 
                             </div>
 
-                            <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
-                                <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
-                                    <PencilRuler size={25} className="text-white" />
-                                </div>
-                                <p className="text-[14px]  text-gray-500  my-1">Area Size</p>
-                                <div className="mb-0 font-bold flex gap-2">
-                                    {project.projectSize.map((item) => (
-                                        <div key={item.id}>{item.size} Sqft /</div>
-                                    ))}
-                                </div>
-
-                            </div>
-                            <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
-                                <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
-                                    <Building size={25} className="text-white" />
-                                </div>
-                                <p className="text-[14px]  text-gray-500  my-1">BHK</p>
-                                <div className="mb-0 font-bold flex gap-2">{project.bhk.map((item) => (
-                                    <div key={item.id}>{item.bhk} BHK /</div>
-                                ))}</div>
-
-                            </div>
+                            
 
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
                                 <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
@@ -106,15 +86,32 @@ const Tabs = ({ project }) => {
                                 <p className="mb-0 font-bold">{project.AvailablePlot}</p>
 
                             </div>
-
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
                                 <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
-                                    <Building2 size={25} className="text-white" />
+                                    <Building size={25} className="text-white" />
                                 </div>
-                                <p className="text-[14px]  text-gray-500  my-1">Price</p>
-                                <p className="mb-0 font-bold">{project.price} ₹</p>
+                                <p className="text-[14px]  text-gray-500  my-1">BHK</p>
+                                <div className="mb-0 font-bold flex gap-2">{project.bhk.map((item) => (
+                                    <div key={item.id}>{item.bhk} BHK /</div>
+                                ))}</div>
 
+                            </div> 
+
+                            <div className="col-span-4 bg-[#fff5e4] rounded-md py-6 ">
+                              
+                                <PriceFilter bhk={project.bhk} size={project.projectSize}  semiprice={project.semifurnishedprice} fullprice={project.fullfurnishedprice}/>
                             </div>
+                           
+                            <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
+                                <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
+                                    <Building size={25} className="text-white" />
+                                </div>
+                                <p className="text-[14px]  text-gray-500  my-1">BHK</p>
+                                <div className="mb-0 font-bold flex gap-2">{project.bhk.map((item) => (
+                                    <div key={item.id}>{item.bhk} BHK /</div>
+                                ))}</div>
+
+                            </div> 
                         </div>
                     </div>
                 )}

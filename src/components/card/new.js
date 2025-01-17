@@ -41,10 +41,11 @@ export default function New({ imageUrl, logo, status, title, location, size, bhk
 
                 <div className="flex items-center justify-between mt-3 border-t pt-3">
                     <span className="flex items-center text-[12px] text-gray-600">
-                        <Maximize2 size={12} className="mr-2 text-gray-400" /> {size[0].size} Sq. Ft
+                        {/* <Maximize2 size={12} className="mr-2 text-gray-400" /> {size[0].size} Sq. Ft */}
                     </span>
                     <span className="flex items-center text-[12px] text-gray-600">
-                        <Home size={12} className="mr-2 text-gray-400" /> {bhk[0].bhk} BHK
+                        <Home size={12} className="mr-2 text-gray-400" />
+                        {bhk.map((data) => data.bhk).join(", ")} BHK
                     </span>
                 </div>
             </div>

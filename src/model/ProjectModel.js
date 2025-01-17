@@ -8,9 +8,13 @@ const ProjectSchema = new Schema(
             default: "Not-Provided"
         },
 
-        price: {
+        semifurnishedprice: {
             type: String,
-            
+            default: "Not Provided"
+        },
+
+        fullfurnishedprice: {
+            type: String,
             default: "Not Provided"
         },
 
@@ -101,6 +105,6 @@ const ProjectSchema = new Schema(
     { timestamps: true }
 );
 
-const ProjectModel = mongoose.models.project66 || mongoose.model("project66", ProjectSchema);
+const ProjectModel = mongoose.models.project666 || mongoose.model("project666", ProjectSchema);
 
 export default ProjectModel;
