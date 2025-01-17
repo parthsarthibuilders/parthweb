@@ -76,7 +76,7 @@ export default function SingleProject({ params }) {
                 if (bhkObj) {
                     // Intersection of current images and BHK images
                     newImages = newImages.filter((img) => bhkObj.image.includes(img));
-                    
+
                     // Update available sizes based on selected BHK
                     const bhkSizes = project.projectSize.filter((size) =>
                         size.image.some((img) => bhkObj.image.includes(img))
@@ -100,6 +100,25 @@ export default function SingleProject({ params }) {
         setSelectedBhk("");
         if (project) setFilteredImages(project.gallery);
     };
+
+
+    if (project?.possessionStatus === "Coming Soon") {
+        return (
+            <section className="py-20   flex items-center justify-center">
+                <div className="text-center transform -skew-y-6">
+                    <h1 className="text-6xl font-extrabold text-[#DAB221] animate-bounce tracking-wide">
+                        Coming Soon 🚀
+                    </h1>
+
+                </div>
+                <div className="absolute bottom-8 left-8 flex gap-2  items-center text-sm text-[#DAB221]">
+                    <span className="animate-pulse">✨ Stay excited!</span>
+                </div>
+            </section>
+
+        );
+    }
+
 
     if (loading) {
         return (
@@ -126,7 +145,7 @@ export default function SingleProject({ params }) {
 
     return (
         <>
-            <section className="py-2 bg-[#e6ecfc]">
+            <section className="py-2 bg-[#e6ecfc]"> 
                 <title>{project.seoTitle}</title>
                 <div className="container max-w-[90%] mx-auto">
                     <Breadcrumb customLabels={{ projects: "Projects", single: "Project Details" }} />
@@ -137,62 +156,69 @@ export default function SingleProject({ params }) {
                     <div className="grid grid-cols-12 gap-8">
                         <div className="lg:col-span-8 col-span-12">
                             <div className="relative overflow-hidden bg-[#fff5e4] rounded-lg rounded-br-none">
-                                <span className="inline-block z-50 absolute top-6 text-xs -left-9 bg-red-500 py-1 text-white px-10 border-y transform -rotate-45">
-                                    ✨Featured
-                                </span>
+                                {project?.possessionStatus === "Sold Out" ? (
+                                    <span className="inline-block z-50 absolute top-6 text-xs -left-9 bg-red-500 py-1 text-white px-10 border-y transform -rotate-45">
+
+                                        ✨Sold Out
+                                    </span>
+                                ) : (
+                                    <span className="inline-block z-50 absolute top-6 text-xs -left-9 bg-red-500 py-1 text-white px-10 border-y transform -rotate-45">
+
+                                        ✨Featured
+                                    </span>)}
                                 <ImageGallery images={filteredImages} />
                             </div>
 
                             <div className="flex justify-end  items-center">
                                 <div className="flex gap-6 bg-[#fff5e4] p-2 rounded-b-lg shadow-md">
 
-                                <div className="flex justify-end items-center">
-                                <div className="flex gap-6 bg-[#fff5e4] p-2 rounded-b-lg shadow-md">
-                                    {/* Size Filter */}
-                                    <div className="relative w-1/2">
-                                        <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="size-select">
-                                            Select Size
-                                        </label>
-                                        <select
-                                            id="size-select"
-                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
-                                            value={selectedSize}
-                                            onChange={(e) => setSelectedSize(e.target.value)}
-                                        >
-                                            <option value="" className="text-gray-400">
-                                                All Size
-                                            </option>
-                                            {filteredSizes.map((size) => (
-                                                <option key={size.size} value={size.size}>
-                                                    {size.size} Sq.ft
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
+                                    <div className="flex justify-end items-center">
+                                        <div className="flex gap-6 bg-[#fff5e4] p-2 rounded-b-lg shadow-md">
+                                            {/* Size Filter */}
+                                            <div className="relative w-1/2">
+                                                <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="size-select">
+                                                    Select Size
+                                                </label>
+                                                <select
+                                                    id="size-select"
+                                                    className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
+                                                    value={selectedSize}
+                                                    onChange={(e) => setSelectedSize(e.target.value)}
+                                                >
+                                                    <option value="" className="text-gray-400">
+                                                        All Size
+                                                    </option>
+                                                    {filteredSizes.map((size) => (
+                                                        <option key={size.size} value={size.size}>
+                                                            {size.size} Sq.ft
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
 
-                                    {/* BHK Filter */}
-                                    <div className="relative w-1/2">
-                                        <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="bhk-select">
-                                            Select BHK
-                                        </label>
-                                        <select
-                                            id="bhk-select"
-                                            className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
-                                            value={selectedBhk}
-                                            onChange={(e) => setSelectedBhk(e.target.value)}
-                                        >
-                                            <option value="" className="text-gray-400">
-                                                All BHK
-                                            </option>
-                                            {project.bhk.map((bhk) => (
-                                                <option key={bhk.bhk} value={bhk.bhk}>
-                                                    {bhk.bhk} BHK
-                                                </option>
-                                            ))}
-                                        </select>
+                                            {/* BHK Filter */}
+                                            <div className="relative w-1/2">
+                                                <label className="block text-xs font-semibold text-gray-700 mb-1" htmlFor="bhk-select">
+                                                    Select BHK
+                                                </label>
+                                                <select
+                                                    id="bhk-select"
+                                                    className="block w-full text-sm px-3 py-2 rounded border border-gray-300 bg-[#2d2849] text-white focus:outline-none"
+                                                    value={selectedBhk}
+                                                    onChange={(e) => setSelectedBhk(e.target.value)}
+                                                >
+                                                    <option value="" className="text-gray-400">
+                                                        All BHK
+                                                    </option>
+                                                    {project.bhk.map((bhk) => (
+                                                        <option key={bhk.bhk} value={bhk.bhk}>
+                                                            {bhk.bhk} BHK
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                </div>
                                 </div>
 
                                 {/* <button
