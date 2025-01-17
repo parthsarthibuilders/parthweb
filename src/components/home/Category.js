@@ -80,7 +80,7 @@ export default function Category() {
                                 ))
                             ) : (
                                 <div className="px-2">
-                                    <Cata imageUrl={parthCr} title="Modern Apartment" />
+                                  Please Wait
                                 </div>
                             )}
                         </Slider>
