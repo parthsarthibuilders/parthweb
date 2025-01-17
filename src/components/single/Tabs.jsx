@@ -68,7 +68,7 @@ const Tabs = ({ project }) => {
 
                             </div>
 
-                            
+
 
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
                                 <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
@@ -95,23 +95,21 @@ const Tabs = ({ project }) => {
                                     <div key={item.id}>{item.bhk} BHK /</div>
                                 ))}</div>
 
-                            </div> 
-
-                            <div className="col-span-4 bg-[#fff5e4] rounded-md py-6 ">
-                              
-                                <PriceFilter bhk={project.bhk} size={project.projectSize}  semiprice={project.semifurnishedprice} fullprice={project.fullfurnishedprice}/>
                             </div>
-                           
-                            <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
-                                <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
-                                    <Building size={25} className="text-white" />
-                                </div>
-                                <p className="text-[14px]  text-gray-500  my-1">BHK</p>
-                                <div className="mb-0 font-bold flex gap-2">{project.bhk.map((item) => (
-                                    <div key={item.id}>{item.bhk} BHK /</div>
-                                ))}</div>
 
-                            </div> 
+                            {(project.semifurnishedprice !== "Not Provided" || project.fullfurnishedprice !== "Not Provided") && (
+                                <div className="col-span-4 bg-[#fff5e4] rounded-md py-6">
+                                    <PriceFilter
+                                        bhk={project.bhk}
+                                        size={project.projectSize}
+                                        semiprice={project.semifurnishedprice}
+                                        fullprice={project.fullfurnishedprice}
+                                    />
+                                </div>
+                            )}
+
+
+
                         </div>
                     </div>
                 )}
