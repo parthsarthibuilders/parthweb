@@ -64,7 +64,7 @@ const Tabs = ({ project }) => {
                                     <Building2 size={25} className="text-white" />
                                 </div>
                                 <p className="text-[14px]  text-gray-500  my-1">Property Type</p>
-                                <p className="mb-0 font-bold">{project.propertyType}</p>
+                                <p className="mb-0 font-bold">{project?.propertyType}</p>
 
                             </div>
 
@@ -75,7 +75,7 @@ const Tabs = ({ project }) => {
                                     <ChartPie size={25} className="text-white" />
                                 </div>
                                 <p className="text-[14px]  text-gray-500  my-1">Possession Status</p>
-                                <p className="mb-0 font-bold">{project.possessionStatus}</p>
+                                <p className="mb-0 font-bold">{project?.possessionStatus}</p>
 
                             </div>
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
@@ -83,7 +83,7 @@ const Tabs = ({ project }) => {
                                     <HousePlus size={25} className="text-white" />
                                 </div>
                                 <p className="text-[14px]  text-gray-500  my-1">Available Plots</p>
-                                <p className="mb-0 font-bold">{project.AvailablePlot}</p>
+                                <p className="mb-0 font-bold">{project?.AvailablePlot}</p>
 
                             </div>
                             <div className="col-span-1 bg-[#fff5e4] rounded-md py-6 flex flex-col items-center justify-center">
@@ -92,7 +92,7 @@ const Tabs = ({ project }) => {
                                 </div>
                                 <p className="text-[14px]  text-gray-500  my-1">BHK</p>
                                 <div className="mb-0 font-bold flex gap-2">{project.bhk.map((item) => (
-                                    <div key={item.id}>{item.bhk} BHK /</div>
+                                    <div key={item.id}>{item?.bhk} BHK /</div>
                                 ))}</div>
 
                             </div>
@@ -128,10 +128,10 @@ const Tabs = ({ project }) => {
                 {activeTab === 2 && (
                     <div>
                         <Image
-                            src={project.sitePlan}
+                            src={project?.sitePlan || '/path/to/default-image.jpg'}
                             width={500}
                             height={500}
-                            alt=''
+                            alt="Site Plan"
                         />
 
                     </div>
@@ -140,19 +140,19 @@ const Tabs = ({ project }) => {
                 {/* Tab 4 Content */}
                 {activeTab === 3 && (
                     <div>
-                        <h2 className="text-xl font-bold">{project.title}</h2>
-                        <p className="text-gray-500">Price: ₹{project.price}</p>
-                        <p className="text-gray-500">Property Type: {project.propertyType === "1" ? "Apartment" : "Other"}</p>
-                        <p className="text-gray-500">BHK: {project.bhk.map((item) => (
+                        <h2 className="text-xl font-bold">{project?.title}</h2>
+                        <p className="text-gray-500">Price: ₹{project?.price}</p>
+                        <p className="text-gray-500">Property Type: {project?.propertyType === "1" ? "Apartment" : "Other"}</p>
+                        <p className="text-gray-500">BHK: {project?.bhk.map((item) => (
                             <>{item.bhk} , </>
                         ))}</p>
-                        <p className="text-gray-500">Project Size: {project.projectSize.map((item) => (
+                        <p className="text-gray-500">Project Size: {project?.projectSize.map((item) => (
                             <>{item.size} sq.ft. , </>
                         ))}</p>
-                        <p className="text-gray-500">Possession Status: {project.possessionStatus}</p>
-                        <p className="text-gray-500">Available Plot: {project.AvailablePlot}</p>
-                        <p className="text-gray-500">Featured: {project.isFeatured ? "Yes" : "No"}</p>
-                        <p className="text-gray-500">Location: {project.location}</p>
+                        <p className="text-gray-500">Possession Status: {project?.possessionStatus}</p>
+                        <p className="text-gray-500">Available Plot: {project?.AvailablePlot}</p>
+                        <p className="text-gray-500">Featured: {project?.isFeatured ? "Yes" : "No"}</p>
+                        <p className="text-gray-500">Location: {project?.location}</p>
 
 
 
