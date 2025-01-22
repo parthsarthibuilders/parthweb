@@ -244,7 +244,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className=" border-t mt-10 pt-5 border-t-slate-400 md:text-start text-center">
-                        <p className="text-[12px] text-gray-200">Copyright © 2024 ParthSarthiBuilder.com . All rights reserved.</p>
+                        <p className="text-[12px] text-gray-200">Copyright © 2025 parthsarthi.org . All rights reserved.</p>
                     </div>
                 </div>
             </footer>

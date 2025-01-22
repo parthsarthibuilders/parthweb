@@ -21,25 +21,37 @@ export default function FeaturedCard({ project }) {
                     </div>
 
                     <div className="flex justify-between lg:flex-row flex-col lg:items-center lg:space-y-0 space-y-2 bg-slate-600 bg-opacity-40 p-4 rounded-lg w-full">
-                        <p className="flex items-center">
-                            <div className="flex items-center me-2 justify-center bg-gradient-to-r   from-[#DAB221] to-[#B07C0A] rounded-full h-[25px] w-[25px]">
-                                <Maximize2 size={15} color="white" className="" />
-                            </div>
+                        {(project.projectSize.length === 0 || !project.projectSize[0]?.size || project.bhk.length === 0 || !project.bhk[0]?.bhk) ? (
                             <p className="text-white text-sm flex font-semibold items-center">
-                                {project.projectSize.length > 0 && `${project.projectSize[0].size} Sq. Ft`}
+                                <span>Details Coming Soon</span>
                             </p>
+                        ) : (
+                            <>
+                                {project.projectSize.length > 0 && project.projectSize[0]?.size && (
+                                    <p className="flex items-center">
+                                        <div className="flex items-center me-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[25px] w-[25px]">
+                                            <Maximize2 size={15} color="white" />
+                                        </div>
+                                        <p className="text-white text-sm flex font-semibold items-center">
+                                            {`${project.projectSize[0].size} Sq. Ft`}
+                                        </p>
+                                    </p>
+                                )}
 
-                        </p>
-                        <p className="flex items-center">
-                            <div className="flex items-center me-2 justify-center bg-gradient-to-r   from-[#DAB221] to-[#B07C0A] rounded-full h-[25px] w-[25px]">
-                                <Home size={15} color="white" className="" />
-                            </div>
-                            <p className="text-white text-sm flex font-semibold items-center">
-                                {project.bhk.length > 0 && `${project.bhk[0].bhk} BHK, `}{project.propertyType}
-                            </p>
-
-                        </p>
+                                {project.bhk.length > 0 && project.bhk[0]?.bhk && (
+                                    <p className="flex items-center">
+                                        <div className="flex items-center me-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[25px] w-[25px]">
+                                            <Home size={15} color="white" />
+                                        </div>
+                                        <p className="text-white text-sm flex font-semibold items-center">
+                                            {`${project.bhk[0].bhk} BHK, ${project.propertyType}`}
+                                        </p>
+                                    </p>
+                                )}
+                            </>
+                        )}
                     </div>
+
 
                     <Link href={`/projects/${project.slug}`} className="flex font-semibold bg-green-500 text-white px-8 py-4 rounded-lg w-full text-center items-center justify-center">View Details</Link>
 

@@ -33,13 +33,22 @@ export default function New({ imageUrl, logo, status, title, location, size, bhk
 
 
                         <p className="flex items-center text-sm text-gray-500 mt-1">
-                            <MapPin className="w-4 h-4 mr-1 text-[#CC9B18] lin" /> {location.slice(0,40)}...
+                            {status === "Coming Soon" ? (
+                                <span>Coming Soon</span>
+                            ) : (
+                                <>
+                                    <MapPin className="w-4 h-4 mr-1 text-[#CC9B18] lin" />
+                                    {location.slice(0, 40)}...
+                                </>
+                            )}
                         </p>
+
+
                     </div>
 
                 </div>
 
-               
+
             </div>
         </Link>
     );
