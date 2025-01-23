@@ -1,24 +1,25 @@
 import React from 'react'
-import Image from 'next/image'
-import Logo from "@/public/annother-parth.svg"
 export default function page() {
     return (
         <>
-            <div>
-                <div className=' py-8'>
+           <div>
+    <div className="py-8">
+        <div className="container lg:w-[80%] mx-auto">
+            <h1 className="border-b-4 font-semibold text-2xl lg:text-3xl border-b-[#CC9B18] mb-4">Vision</h1>
+            <p className="text-sm leading-6 font-medium my-3">
+                At <span className="font-bold">PARTH SARTHI Builder</span>, our vision is to transform the landscape of urban living by crafting premium residential spaces that epitomize luxury, comfort, and innovation. Based in the vibrant city of Jaipur and established in 2008, we are dedicated to creating iconic landmarks that stand as a testament to exceptional craftsmanship and architectural brilliance.
+            </p>
+            <p className="text-sm leading-6 font-medium my-3">
+                We believe that a home is not just a place to live but an experience to cherish. Every project we undertake is meticulously designed to provide a harmonious blend of modern architecture, thoughtful amenities, and strategic locations. Our developments are a reflection of our commitment to enhancing the quality of life for our residents while setting new benchmarks in luxury living.
+            </p>
+            
+            <p className="text-sm leading-6 font-medium my-3">
+                Our vision extends beyond building homes—we aim to create sustainable, value-driven communities that cater to the aspirations of modern families. With a focus on eco-friendly practices, innovative designs, and timely project delivery, we are redefining what it means to live in a premium home. At PARTH SARTHI Builder, we don’t just build homes; we create lifestyles that inspire and uplift.
+            </p>
+        </div>
+    </div>
+</div>
 
-                    <div className="container lg:w-[80%] mx-auto">
-
-
-                        <h1 className=' border-b-4 font-semibold border-b-[#CC9B18]'>Vision</h1>
-                        <p className=' text-sm leading-6 font-medium my-3'>Raheja Developers is one of the largest Real Estate companies in India established in the year 1990 by Mr. Navin M. Raheja. The company has always maintained path breaking status and has pioneered various firsts in India. From trend setting luxury housing to providing homes for the poorest section of Indian society, from India’s tallest skyscrapers to 165 acres of plotted township, from changing the way people shop to changing the way people work, We have achieved it all.
-                        </p>
-                        <p className=' text-sm leading-6 font-medium'>
-                            In our dynamic journey of last 30 years, we have collaborated with several top notch names in the field of construction, innovation, design, architecture, cinema and hotels. The Leela Hotel, Tata Housing, L&T, Best Western, Ginger hotel to name a few of our national alliances.Our legacy has always been to endeavor the best and deliver the best, creating value for money for everyone. The things are visible in the way we create our projects.</p>
-                    </div>
-
-                </div>
-            </div>
 
         </>
     )

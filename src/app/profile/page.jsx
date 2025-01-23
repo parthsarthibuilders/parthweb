@@ -28,16 +28,17 @@ export default function Page() {
                     <div className="container lg:w-[80%] mx-auto">
                         <div className="grid lg:grid-cols-2">
                             <div className="col-span-1">
-                                <h1 className='border-b-4 font-semibold border-b-[#CC9B18]'>Profile</h1>
-                                <p className='text-sm leading-6 font-medium my-3'>
-                                    Raheja Developers is one of the largest Real Estate companies in India established in the year 1990 by Mr. Navin M. Raheja...
+                                <h1 className="border-b-4 font-semibold border-b-[#CC9B18]">Profile</h1>
+                                <p className="text-sm leading-6 font-medium my-3">
+                                    PARTH SARTHI Builder is a reputed Construction and Real Estate Development company based in Jaipur, India, established in 2008. The company has earned trust and recognition in the industry for its high-quality residential projects.
                                 </p>
-                                <p className='text-sm leading-6 font-medium'>
-                                    In our dynamic journey of last 30 years, we have collaborated with several top-notch names in the field of construction, innovation, and design...
+                                <p className="text-sm leading-6 font-medium">
+                                    Known for premium amenities, modern architecture, and strategic locations, PARTH SARTHI Builder focuses on customer satisfaction and ensures timely delivery of its projects. Collaborations with trusted brands like GODREJ, JAQUAR, and HAVELLS for plumbing and electrical needs further enhance the reliability of their developments.
                                 </p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -67,30 +68,36 @@ export default function Page() {
                                 />
                             </div>
                             <div className="col-span-1 flex flex-col gap-10 lg:justify-end lg:items-end">
-                                <div className='lg:w-64'>
-                                    <div className='flex items-center gap-1'>
-                                        <span className='text-7xl font-semibold'>32</span>
-                                        <span className='border-b text-[#CC9B18]'>YEARS</span>
+                                <div className="lg:w-64">
+                                    <div className="flex items-center gap-1">
+                                        <span className="text-7xl font-semibold">17</span>
+                                        <span className="border-b text-[#CC9B18]">YEARS</span>
                                     </div>
-                                    <p className='text-sm font-medium'>We have been working in the industry since 1990.</p>
+                                    <p className="text-sm font-medium">Building trust and delivering quality projects since 2008.</p>
                                 </div>
 
-                                <div className='lg:w-64'>
-                                    <div className='flex items-center gap-1'>
-                                        <span className='text-7xl font-semibold'>30</span>
-                                        <span className='border-b text-[#CC9B18]'>Million Sqft</span>
+                                <div className="lg:w-64">
+                                    <div className="flex items-center gap-1">
+                                        <span className="text-7xl font-semibold">High</span>
+                                        <span className="border-b text-[#CC9B18]">QUALITY</span>
                                     </div>
-                                    <p className='text-sm font-medium'>15700 units delivered and under construction</p>
+                                    <p className="text-sm font-medium">
+                                        Known for premium amenities, modern architecture, and strategic locations.
+                                    </p>
                                 </div>
 
-                                <div className='lg:w-64'>
-                                    <div className='flex items-center gap-1'>
-                                        <span className='text-7xl font-semibold'>150 +</span>
-                                        <span className='border-b text-[#CC9B18]'>AWARDS</span>
+
+                                <div className="lg:w-64">
+                                    <div className="flex items-center gap-1">
+                                        <span className="text-7xl font-semibold">100%</span>
+                                        <span className="border-b text-[#CC9B18]">SATISFACTION</span>
                                     </div>
-                                    <p className='text-sm font-medium'>Raheja has been awarded for construction many times.</p>
+                                    <p className="text-sm font-medium">
+                                        Committed to customer satisfaction with timely project delivery.
+                                    </p>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
