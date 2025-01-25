@@ -102,7 +102,7 @@ export default function SingleProject({ params }) {
     };
 
 
-  
+
 
     if (project?.possessionStatus === "Coming Soon") {
         return (
@@ -129,7 +129,7 @@ export default function SingleProject({ params }) {
                             </h1>
                         </div>
                     </div>
-    
+
                     {/* Stay Excited Message */}
                     <div className="absolute bottom-8 left-8 flex gap-2 items-center text-sm text-[#DAB221]">
                         <span className="animate-pulse">✨ Stay excited!</span>
@@ -138,7 +138,39 @@ export default function SingleProject({ params }) {
             </section>
         );
     }
-    
+
+    if (project?.possessionStatus === "Sold Out" && filteredImages?.length < 2) {
+        return (
+            <section className="flex justify-center relative py-5 ">
+                <div className="relative w-full max-w-4xl">
+                    {/* Property Image */}
+                    <div className="relative overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                            src={project?.image} // Replace with your image field in the project object
+                            alt={project?.name}
+                            width={1200}
+                            height={800}
+                            className="object-cover w-full h-[400px] sm:h-[500px]"
+                            priority
+                        />
+                        {/* Overlay for Property Title */}
+                        <div className="absolute top-4 left-4 bg-black/70 text-white p-3 rounded-lg shadow-md">
+                            <h2 className="text-2xl font-semibold">{project?.title}</h2>
+                        </div>
+                        {/* Main Overlay */}
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                            <h1 className="text-6xl font-extrabold text-[white] animate-bounce tracking-wide">
+                                Sold Out 🚀
+                            </h1>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        );
+    }
+
 
 
 
