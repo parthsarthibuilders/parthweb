@@ -159,7 +159,7 @@ export default function Projects({params}) {
                         {selectedCategory && (
                             <div className="bg-yellow-100 text-yellow-600 text-sm px-4 py-2 rounded-full flex items-center space-x-2">
                                 {/* Find the category title based on selectedCategory */}
-                                <span>Category: {data.find((item) => item._id === selectedCategory)?.title || 'Unknown Category'}</span>
+                                <span>Category: {data.find((item) => item._id === selectedCategory)?.title || ''}</span>
                                 <X className="h-4 w-4 cursor-pointer" onClick={() => removeFilter('category')} /> {/* Close icon */}
                             </div>
                         )}
