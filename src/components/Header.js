@@ -56,8 +56,9 @@ export default function Header() {
             href: "#",
             submenu: category.map((item) => ({
                 title: item.title,
-                href: `/projects`
+                href: `/project/${encodeURIComponent(item._id)}`, // Pass the title as a query parameter
             }))
+            
         },
         {
             title: "Career",

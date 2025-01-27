@@ -17,7 +17,7 @@ export default function Whatsapp() {
         onClick={sendMessage}
         className="flex items-center px-4 py-1"
       >
-        <Image alt='' src={Whatsapplogo} className=' h-8 w-8' />
+        <Image alt='' src={Whatsapplogo} className=' h-10 w-10' />
       </button>
     </div>
   );

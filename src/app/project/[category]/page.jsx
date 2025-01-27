@@ -4,7 +4,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { Search, X } from 'lucide-react';
 import New from '@/components/card/new';
 import axios from "axios";
-export default function Projects() {
+export default function Projects({params}) {
+    const { category } = params;
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('');
@@ -17,8 +18,12 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     const [error, setError] = useState(null);
-   
-  
+    const initialCategory = category
+    useEffect(() => {
+        if (initialCategory) {
+            setSelectedCategory(initialCategory); // Set the initial category filter from the query parameter
+        }
+    }, [initialCategory]);
     useEffect(() => {
         const alldata = async () => {
             try {
