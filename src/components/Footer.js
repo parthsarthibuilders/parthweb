@@ -9,7 +9,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-
+import Whatsapp from "./Whatsapp/Whatsapp";
 export default function Footer() {
     const [formData, setFormData] = useState({
         email: "",
@@ -247,6 +247,7 @@ export default function Footer() {
                         <p className="text-[12px] text-gray-200">Copyright © 2025 parthsarthi.org . All rights reserved.</p>
                     </div>
                 </div>
+                <Whatsapp/>
             </footer>
         </>
     )

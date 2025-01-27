@@ -136,7 +136,7 @@ const JobForm = () => {
                     htmlFor="fullName"
                     className="peer-focus:font-medium absolute mx-1 px-1 text-sm bg-white text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-[#CC9B18] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Full Name
+                    Full Name <span className="text-red-500">*</span>
                 </label>
             </div>
 
@@ -156,7 +156,7 @@ const JobForm = () => {
                     htmlFor="email"
                     className="peer-focus:font-medium absolute mx-1 px-1 text-sm bg-white text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-[#CC9B18] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Email
+                    Email <span className="text-red-500">*</span>
                 </label>
                 {!isOtpVerified && (
                     <button
@@ -165,6 +165,9 @@ const JobForm = () => {
                         className="mt-2 text-[#CC9B18] text-sm hover:underline"
                     >
                         Send OTP
+                        <span className="ml-1 text-xs text-red-500 group-hover:text-red-600">
+                            (OTP Verification is Compulsory)
+                        </span>
                     </button>
                 )}
             </div>
@@ -208,7 +211,7 @@ const JobForm = () => {
                     htmlFor="phone"
                     className="peer-focus:font-medium absolute mx-1 px-1 text-sm bg-white text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-[#CC9B18] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Phone
+                    Phone <span className="text-red-500">*</span>
                 </label>
             </div>
 
@@ -222,7 +225,7 @@ const JobForm = () => {
                     onChange={handleChange}
                     required
                 >
-                    <option value="" selected>Select Job Profile</option>
+                    <option value="" selected>Select Job Profile *</option>
                     {category.map((data) => (
 
                         <option key={data.id} value={data.category}>{data.category}</option>
@@ -246,11 +249,12 @@ const JobForm = () => {
                     htmlFor="address"
                     className="peer-focus:font-medium absolute bg-white mx-1 px-1 text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-[#CC9B18] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                    Address
+                    Address <span className="text-red-500">*</span>
                 </label>
             </div>
 
             {/* Submit Button */}
+            <span className=" text-xs text-red-400 font-normal"> All Fields are Required</span>
             <button
                 type="submit"
                 className={`w-full py-2.5 px-4 bg-[#CC9B18] text-white text-sm font-medium rounded-md focus:outline-none ${isSubmitEnabled ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'}`}

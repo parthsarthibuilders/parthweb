@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Building2, PencilRuler, Building, ChartPie, HousePlus } from 'lucide-react';
 import Image from 'next/image';
 import PriceFilter from '../Pricefilter/PriceFilter';
+import Aminities from '../Aminities/Aminities';
 const Tabs = ({ project }) => {
     const [activeTab, setActiveTab] = useState(0);
 
@@ -82,7 +83,7 @@ const Tabs = ({ project }) => {
                                 <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]" >
                                     <HousePlus size={25} className="text-white" />
                                 </div>
-                                <p className="text-[14px]  text-gray-500  my-1">Available Plots</p>
+                                <p className="text-[14px]  text-gray-500  my-1">Available Units</p>
                                 <p className="mb-0 font-bold">{project?.AvailablePlot}</p>
 
                             </div>
@@ -140,24 +141,7 @@ const Tabs = ({ project }) => {
                 {/* Tab 4 Content */}
                 {activeTab === 3 && (
                     <div>
-                        <h2 className="text-xl font-bold">{project?.title}</h2>
-                        <p className="text-gray-500">Price: ₹{project?.price}</p>
-                        <p className="text-gray-500">Property Type: {project?.propertyType === "1" ? "Apartment" : "Other"}</p>
-                        <p className="text-gray-500">BHK: {project?.bhk.map((item) => (
-                            <>{item.bhk} , </>
-                        ))}</p>
-                        <p className="text-gray-500">Project Size: {project?.projectSize.map((item) => (
-                            <>{item.size} sq.ft. , </>
-                        ))}</p>
-                        <p className="text-gray-500">Possession Status: {project?.possessionStatus}</p>
-                        <p className="text-gray-500">Available Plot: {project?.AvailablePlot}</p>
-                        <p className="text-gray-500">Featured: {project?.isFeatured ? "Yes" : "No"}</p>
-                        <p className="text-gray-500">Location: {project?.location}</p>
-
-
-
-
-
+                       <Aminities data={project?.amenities}/>
 
                     </div>
 

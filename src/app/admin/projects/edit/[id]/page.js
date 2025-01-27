@@ -19,7 +19,7 @@ export default function Page({ params }) {
   const [formData, setFormData] = useState({
     category: "",
     semifurnishedprice: "",
-    fullfurnishedprice:"",
+    fullfurnishedprice: "",
     title: "",
     slug: "",
     content: "",
@@ -38,7 +38,30 @@ export default function Page({ params }) {
     sitePlan: "",
     pdf: "",
     seoTitle: "",
-    seoDescription: ""
+    seoDescription: "",
+    amenities: {
+      gatedSociety: "false",
+      powerBackup: "false",
+      gym: "false",
+      solarPanel: "false",
+      openTerraceForParty: "false",
+      kidsPlayArea: "false",
+      societyTemple: "false",
+      reservedParking: "false",
+      indoorGames: "false",
+      miniTurf: "false",
+      campFire: "false",
+      intercomFacility: "false",
+      liftFacility: "false",
+      multiPurposeHall: "false",
+      roofTopGarden: "false",
+      lavishInterior: "false",
+      twoSideOpenBuilding: "false",
+      yogaDeck: "false",
+      sittingArea: "false",
+      waterSupply24x7: "false",
+      fireEquipment: "false"
+    }
   });
 
   const [loading, setLoading] = useState(false);
@@ -98,6 +121,30 @@ export default function Page({ params }) {
           seoTitle: res.data.data.seoTitle,
           seoDescription: res.data.data.seoDescription,
 
+          amenities: {
+            gatedSociety: res.data.data.amenities?.gatedSociety ?? false,
+            powerBackup: res.data.data.amenities?.powerBackup ?? false,
+            gym: res.data.data.amenities?.gym ?? false,
+            solarPanel: res.data.data.amenities?.solarPanel ?? false,
+            openTerraceForParty: res.data.data.amenities?.openTerraceForParty ?? false,
+            kidsPlayArea: res.data.data.amenities?.kidsPlayArea ?? false,
+            societyTemple: res.data.data.amenities?.societyTemple ?? false,
+            reservedParking: res.data.data.amenities?.reservedParking ?? false,
+            indoorGames: res.data.data.amenities?.indoorGames ?? false,
+            miniTurf: res.data.data.amenities?.miniTurf ?? false,
+            campFire: res.data.data.amenities?.campFire ?? false,
+            intercomFacility: res.data.data.amenities?.intercomFacility ?? false,
+            liftFacility: res.data.data.amenities?.liftFacility ?? false,
+            multiPurposeHall: res.data.data.amenities?.multiPurposeHall ?? false,
+            roofTopGarden: res.data.data.amenities?.roofTopGarden ?? false,
+            lavishInterior: res.data.data.amenities?.lavishInterior ?? false,
+            twoSideOpenBuilding: res.data.data.amenities?.twoSideOpenBuilding ?? false,
+            yogaDeck: res.data.data.amenities?.yogaDeck ?? false,
+            sittingArea: res.data.data.amenities?.sittingArea ?? false,
+            waterSupply24x7: res.data.data.amenities?.waterSupply24x7 ?? false,
+            fireEquipment: res.data.data.amenities?.fireEquipment ?? false
+          }
+
 
         });
       } catch (error) {
@@ -128,6 +175,15 @@ export default function Page({ params }) {
           [name]: updatedCategories,  // Update the category array
         };
       });
+    } else if (name in formData.amenities) {
+      // Handle amenities (boolean values)
+      setFormData((prev) => ({
+        ...prev,
+        amenities: {
+          ...prev.amenities,
+          [name]: value === "true", // Convert the string value to a boolean
+        },
+      }));
     } else {
       // Handle other fields (boolean or standard input)
       const booleanFields = ["isFeatured"]; // List of fields that should be boolean
@@ -142,6 +198,7 @@ export default function Page({ params }) {
       generateUniqueSlug(value);
     }
   };
+
 
 
   const handleFileChange = (e) => {
@@ -413,7 +470,7 @@ export default function Page({ params }) {
       return { ...prevFormData, projectSize: updatedProjectSize };
     });
   };
-  
+
 
   const handleEditorChange = (field, value) => {
     setFormData((prevFormData) => ({
@@ -558,7 +615,46 @@ export default function Page({ params }) {
                   </label>
                   <ReactQuill theme="snow" className=" h-44 mb-10" value={formData.content} onChange={(value) => handleEditorChange('content', value)} />
                 </div>
+                <div className="col-span-12">
 
+
+                  <label htmlFor="amenities" className="block text-sm font-medium text-gray-700">
+                    Amenities <span className="text-red-600">*</span>
+                  </label>
+                  <div className="  p-4 rounded-lg shadow-md  grid grid-cols-4 gap-4">
+                    {Object.keys(formData.amenities).map((amenityKey) => (
+                      <div key={amenityKey} className=" bg-gray-100 p-2 rounded-md">
+                        <label className="block  text-[12px] ">
+                          {amenityKey.replace(/([A-Z])/g, ' $1').toUpperCase()} {/* Format the key to a more readable label */}
+                        </label>
+                        <div className="flex space-x-6 mt-2">
+                          <label className="flex items-center text-gray-600 cursor-pointer hover:text-blue-600">
+                            <input
+                              type="radio"
+                              name={amenityKey}
+                              value="true" // String "true"
+                              checked={formData.amenities[amenityKey] === true}
+                              onChange={handleChange}
+                              className="text-blue-500 border-gray-300 focus:ring-2 focus:ring-blue-500 rounded-full transition duration-200 ease-in-out"
+                            />
+                            <span className="text-[12px]">Yes</span>
+                          </label>
+                          <label className="flex items-center text-gray-600 cursor-pointer hover:text-blue-600">
+                            <input
+                              type="radio"
+                              name={amenityKey}
+                              value="false" // String "false"
+                              checked={formData.amenities[amenityKey] === false}
+                              onChange={handleChange}
+                              className="text-blue-500 border-gray-300 focus:ring-2 focus:ring-blue-500 rounded-full transition duration-200 ease-in-out"
+                            />
+                            <span className="text-[12px]">No</span>
+                          </label>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 <div className="col-span-12">
                   <label htmlFor="logo" className="block text-[12px] text-gray-700">
@@ -591,7 +687,7 @@ export default function Page({ params }) {
                         type="file"
                         id="logo"
                         name="logo"
-                       accept="application/pdf,image/*,image/heic"
+                        accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         className="hidden"
                       />
@@ -640,7 +736,7 @@ export default function Page({ params }) {
                         type="file"
                         id="image"
                         name="image"
-                       accept="application/pdf,image/*,image/heic"
+                        accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         className="hidden"
                       />
@@ -993,7 +1089,7 @@ export default function Page({ params }) {
 
               <div className="sm:col-span-6 col-span-12">
                 <label htmlFor="semifurnishedprice" className="block text-[12px] text-gray-700">
-                Semi Furnished price <span className=" text-red-600">*</span>
+                  Semi Furnished price <span className=" text-red-600">*</span>
                 </label>
                 <input
                   type="number"
@@ -1007,7 +1103,7 @@ export default function Page({ params }) {
 
               <div className="sm:col-span-6 col-span-12">
                 <label htmlFor="fullfurnishedprice" className="block text-[12px] text-gray-700">
-                Full Furnished price <span className=" text-red-600">*</span>
+                  Full Furnished price <span className=" text-red-600">*</span>
                 </label>
                 <input
                   type="number"
@@ -1049,6 +1145,8 @@ export default function Page({ params }) {
                 </label>
 
               </div>
+
+
 
 
 

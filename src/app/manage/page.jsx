@@ -8,6 +8,29 @@ export default function Page() {
         <>
             <div className='container lg:w-[80%] mx-auto p-5 lg:p-0'>
 
+  {/* Bhagwana Ram Burdak Section */}
+  <div className="grid lg:grid-cols-5 gap-4 my-5 border-b pb-5">
+                    <div className="lg:col-span-2 flex justify-center lg:justify-start">
+                        <Image
+                            src={Image2}
+                            alt="Bhagwana Ram Burdak"
+                            priority
+                            width={350}
+                            height={525}
+                            className='rounded-lg shadow-lg'
+                        />
+                    </div>
+                    <div className="lg:col-span-3">
+                        <h3 className='border-b-4 border-[#CC9B18] font-semibold text-2xl text-[#333]'>Bhagwana Ram Burdak</h3>
+                        <p className='text-sm mt-2 text-gray-600 leading-6'>
+                            Bhagwana Ram Burdak, the co-founder and driving force behind <span className='font-bold text-[#CC9B18]'>Parth Sarthi Buildestate Pvt Ltd</span>, is a name synonymous with innovation and resilience in the real estate sector. Since 2003, he has spearheaded numerous successful projects, blending strategic foresight with a deep understanding of market dynamics.
+                            <br /><br />
+                            Known for his integrity and customer-first approach, Bhagwana Ram has built a legacy of trust and excellence. His visionary mindset and tireless efforts have positioned the company as a market leader, known for delivering properties that redefine luxury and comfort. He is celebrated for his ability to stay ahead of industry trends, ensuring every project meets and exceeds client expectations. Bhagwana Ram’s story is one of perseverance, passion, and an unwavering commitment to excellence.
+                            <br /><br />
+                            Outside of his professional life, Bhagwana Ram is an advocate for sustainable development. His efforts in promoting green building practices and environmental conservation have set a new standard for responsible real estate development. Additionally, he actively participates in community-building activities, fostering a sense of unity and progress in the regions where the company operates.
+                        </p>
+                    </div>
+                </div>
                 {/* Megha Ram Burdak Section */}
                 <div className="grid lg:grid-cols-5 gap-4 my-5 border-b pb-5">
                     <div className="lg:col-span-3">
@@ -32,29 +55,7 @@ export default function Page() {
                     </div>
                 </div>
 
-                {/* Bhagwana Ram Burdak Section */}
-                <div className="grid lg:grid-cols-5 gap-4 my-5 border-b pb-5">
-                    <div className="lg:col-span-2 flex justify-center lg:justify-start">
-                        <Image
-                            src={Image2}
-                            alt="Bhagwana Ram Burdak"
-                            priority
-                            width={350}
-                            height={525}
-                            className='rounded-lg shadow-lg'
-                        />
-                    </div>
-                    <div className="lg:col-span-3">
-                        <h3 className='border-b-4 border-[#CC9B18] font-semibold text-2xl text-[#333]'>Bhagwana Ram Burdak</h3>
-                        <p className='text-sm mt-2 text-gray-600 leading-6'>
-                            Bhagwana Ram Burdak, the co-founder and driving force behind <span className='font-bold text-[#CC9B18]'>Parth Sarthi Buildestate Pvt Ltd</span>, is a name synonymous with innovation and resilience in the real estate sector. Since 2003, he has spearheaded numerous successful projects, blending strategic foresight with a deep understanding of market dynamics.
-                            <br /><br />
-                            Known for his integrity and customer-first approach, Bhagwana Ram has built a legacy of trust and excellence. His visionary mindset and tireless efforts have positioned the company as a market leader, known for delivering properties that redefine luxury and comfort. He is celebrated for his ability to stay ahead of industry trends, ensuring every project meets and exceeds client expectations. Bhagwana Ram’s story is one of perseverance, passion, and an unwavering commitment to excellence.
-                            <br /><br />
-                            Outside of his professional life, Bhagwana Ram is an advocate for sustainable development. His efforts in promoting green building practices and environmental conservation have set a new standard for responsible real estate development. Additionally, he actively participates in community-building activities, fostering a sense of unity and progress in the regions where the company operates.
-                        </p>
-                    </div>
-                </div>
+              
 
             </div>
         </>
