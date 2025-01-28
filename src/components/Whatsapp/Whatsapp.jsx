@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Whatsapplogo from "@/public/logo.png"
 export default function Whatsapp() {
-  const phoneNumber = '9784222132'; // Replace with your phone number
+  const phoneNumber = '919784222132'; // Replace with your phone number
 
   const sendMessage = () => {
     const currentPageUrl = encodeURIComponent(window.location.href); // Encode the current page URL
