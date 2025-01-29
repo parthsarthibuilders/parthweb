@@ -37,7 +37,7 @@ const Breadcrumb = ({ customLabels = {} }) => {
                         <li key={index} className="flex items-center">
                             {!isLast ? (
                                 <>
-                                    <Link href={fullPath} className="text-[#2d2849] hover:underline capitalize">
+                                    <Link href="all" className="text-[#2d2849] hover:underline capitalize">
                                         {label}
                                     </Link>
                                     <ChevronsRight size={13} className="mx-2" />

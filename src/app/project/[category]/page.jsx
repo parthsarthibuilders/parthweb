@@ -20,10 +20,15 @@ export default function Projects({params}) {
     const [error, setError] = useState(null);
     const initialCategory = category
     useEffect(() => {
-        if (initialCategory) {
-            setSelectedCategory(initialCategory); // Set the initial category filter from the query parameter
+        if (initialCategory && data.length > 0) {
+          
+            const foundCategory = data.find(item => item.slug.toLowerCase() === initialCategory.toLowerCase());
+            if (foundCategory) {
+                setSelectedCategory(foundCategory._id); 
+            }
         }
-    }, [initialCategory]);
+    }, [initialCategory, data]); // Depend on both `initialCategory` and `data`
+    
     useEffect(() => {
         const alldata = async () => {
             try {
