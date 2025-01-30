@@ -12,12 +12,12 @@ export default function Whatsapp() {
   };
 
   return (
-    <div className="flex items-center justify-center fixed bottom-0 right-0">
+    <div className="flex items-center justify-center fixed bottom-5 right-0">
       <button
         onClick={sendMessage}
         className="flex items-center px-4 py-1"
       >
-        <Image alt='' src={Whatsapplogo} className=' h-10 w-10' />
+        <Image alt='' src={Whatsapplogo} className=' h-12 w-12' />
       </button>
     </div>
   );

@@ -61,7 +61,7 @@ export default function BannerVideo() {
                             ))} */}
                     <Link href="/projects">
                         <Image
-                            src="https://parthweb.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdisbjpwzn%2Fimage%2Fupload%2Fv1736490483%2Fparthsarthi%2Fawjtkzjdvlfcpzbbadj6.webp&w=1920&q=75"
+                            src="https://www.parthsarthi.org/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdisbjpwzn%2Fimage%2Fupload%2Fv1738220574%2Fparthsarthi%2Ffpxbgrcom1re4vizulxf.webp&w=1920&q=75"
                             width={1920}
                             height={1080}
                             className="max-w-full w-full"
@@ -70,7 +70,7 @@ export default function BannerVideo() {
                     </Link>
                     <Link href="/projects">
                         <Image
-                            src="https://parthweb.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdisbjpwzn%2Fimage%2Fupload%2Fv1736490483%2Fparthsarthi%2Fawjtkzjdvlfcpzbbadj6.webp&w=1920&q=75"
+                            src="https://www.parthsarthi.org/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdisbjpwzn%2Fimage%2Fupload%2Fv1738220574%2Fparthsarthi%2Ffpxbgrcom1re4vizulxf.webp&w=1920&q=75"
                             width={1920}
                             height={1080}
                             className="max-w-full w-full"
