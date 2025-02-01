@@ -9,7 +9,7 @@ import { ArrowDownToLine } from "lucide-react";
 import ContactForm from "@/components/single/ContactForm";
 import ContactFormPdf from "@/components/single/CaontactFormpdf";
 import Image from "next/image";
-
+import EmiCalculator from "@/components/EmiCalculator/EmiCalculator";
 function Modal({ isOpen, onClose, children }) {
     if (!isOpen) return null;
 
@@ -291,7 +291,7 @@ export default function SingleProject({ params }) {
                             <Tabs project={project} />
 
                             <ReadMore project={project} />
-
+                            <EmiCalculator />
                             <div className="mt-5">
                                 <button
                                     onClick={() => setIsModalOpen(true)}

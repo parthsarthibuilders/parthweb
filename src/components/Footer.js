@@ -123,7 +123,7 @@ export default function Footer() {
 
                             </div>
                             <h4 className="font-semibold text-lg text-white">E-Mail</h4>
-                            <p className=" text-sm text-white"> info@parthsarthibuilder.com</p>
+                            <p className=" text-sm text-white">info@parthsarthi.org</p>
 
                         </div>
                     </div>

@@ -8,13 +8,14 @@ import Feature from "@/components/home/Feature";
 import Partners from "@/components/home/Partners";
 import Reviews from "@/components/home/Reviews";
 import BlogsSection from "@/components/home/BlogsSection";
+import Instafeed from "@/components/home/Instafeed";
 
 export default function Home() {
   return (
 
     <div>
       <BannerVideo />
-      <Deal />
+      {/* <Deal /> */}
       <Feature />
       <AboutComponent />
       <NewLaunches />
@@ -22,6 +23,7 @@ export default function Home() {
       <Partners />
       <Reviews />
       <BlogsSection />
+      <Instafeed/>
     </div>
   );
 }

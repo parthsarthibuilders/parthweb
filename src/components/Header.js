@@ -111,7 +111,7 @@ export default function Header() {
                 <div className="container w-[90%] mx-auto">
                     <div className="grid sm:grid-cols-2">
                         <div className="col-span-1 flex items-center justify-start space-x-4">
-                            <p className="text-white md:flex hidden items-center text-sm"><Mail size={15} className="me-1" />info@parthsarthibuilder.com</p>
+                            <p className="text-white md:flex hidden items-center text-sm"><Mail size={15} className="me-1" />info@parthsarthi.org</p>
                             <p className="text-white sm:flex hidden items-center text-sm"><Smartphone size={15} className="me-1" />+91 9024-965-965</p>
                         </div>
                         <div className="col-span-1 flex items-center sm:justify-end justify-center space-x-2">

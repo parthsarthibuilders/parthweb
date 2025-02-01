@@ -27,7 +27,7 @@ body {
 }
 
 .gradientText {
-  background: -webkit-linear-gradient(315deg, #ffd334 0%, #ffae00 74%);
+  background: -webkit-linear-gradient(315deg, #ffd334 0%, #DAB221 74%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -146,4 +146,128 @@ body {
 .image-gallery-thumbnail{
   height: 80px!important;
   overflow: hidden;
+}
+
+.content {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a202c;
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  color: #DAB221;
+  border-bottom: 2px solid #DAB221;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  color: #DAB221;
+  margin-bottom: 5px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.content ul li {
+  font-size: 1rem;
+  color: #555;
+  padding-left: 5px;
+}
+
+.content ol {
+  list-style: decimal inside;
+  padding-left: 20px;
+}
+
+.content ol li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.content a {
+  color: #DAB221;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content blockquote {
+  font-style: italic;
+  border-left: 4px solid #DAB221;
+  padding-left: 15px;
+  margin: 10px 0;
+  color: #666;
+}
+
+.content code {
+  background-color: #f4f4f4;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.content pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.content table, 
+.content th, 
+.content td {
+  border: 1px solid #ddd;
+}
+
+.content th, 
+.content td {
+  padding: 10px;
+  text-align: left;
+}
+
+.content th {
+  background-color: #DAB221;
+  color: white;
+}
+
+.content hr {
+  border: 0;
+  height: 2px;
+  background: #ddd;
+  margin: 20px 0;
 }

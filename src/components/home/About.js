@@ -26,14 +26,14 @@ export default function AboutComponent() {
 
                         </div>
                         <div className="col-span-2">
-                            <Link className="block videImgtag h-full relative" href="#">
+                            <Link className="block videImgtag h-full relative" href="https://www.instagram.com/reel/C7UbFevtE3H/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                                 <Image src={videoImg} alt="Video Img" className="h-full object-cover rounded-3xl" />
                                 <div className="absolute inset-0 flex justify-center items-center">
                                     {/* Animated Play Icon */}
                                     <PlayCircle className="text-white w-16 h-16 animate-pulse hover:scale-110 transition-transform duration-300 cursor-pointer" />
                                 </div>
                             </Link>
-
+        
                         </div>
                     </div>
                 </div>
