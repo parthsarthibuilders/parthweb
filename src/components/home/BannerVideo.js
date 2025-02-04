@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from "react-slick";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import Banner from "@/public/Untitled design (28) (1).png"
 export default function BannerVideo() {
     
 
@@ -17,7 +17,7 @@ export default function BannerVideo() {
               
                     <Link href="/projects">
                         <Image
-                            src="https://www.parthsarthi.org/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdisbjpwzn%2Fimage%2Fupload%2Fv1738220574%2Fparthsarthi%2Ffpxbgrcom1re4vizulxf.webp&w=1920&q=75"
+                            src={Banner}
                             width={1920}
                             height={1080}
                             className="max-w-full w-full"
