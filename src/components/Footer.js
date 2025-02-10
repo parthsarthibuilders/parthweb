@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PhoneCall, MapPin, Mail, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
-import Logo from '@/public/annother-parth.svg';
+import Logo from '@/public/Parth sarthi R logo 1.png';
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
@@ -133,7 +133,9 @@ export default function Footer() {
                 <div className="container   w-[90%]  mx-auto">
                     <div className="grid md:grid-cols-3 gap-5 grid-cols-1">
                         <div className="col-span-1 flex flex-col md:items-start items-center md:text-start text-center">
-                            <Link className="inline-block mb-3" href="/"><Image alt='' src={Logo} className="md:max-w-[90px] max-w-[50px]" /></Link>
+                            <Link className="inline-block mb-3" href="/">
+                            <Image alt='' src={Logo} className="max-w-[90px]" />
+                            </Link>
                             <p className="text-white text-sm mb-3">Parth Sarthi Builders has established itself as a prominent name in the construction and real estate industry in Jaipur over the past two decades with its exceptional development projects.</p>
                             <div className="flex items-center  space-x-2">
                                 <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank"><Facebook size={14} /></Link>
