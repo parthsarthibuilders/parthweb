@@ -96,6 +96,9 @@ export default function Header() {
         setIsMobileMenuOpen((prev) => !prev); // Toggle mobile menu visibility
     };
 
+    const close = () => {
+        setIsMobileMenuOpen(false); // Toggle mobile menu visibility
+    };
     const toggleSubMenu = (index) => {
         setOpenSubMenuIndex((prevIndex) => (prevIndex === index ? null : index)); // Only one submenu open at a time
     };
@@ -188,6 +191,7 @@ export default function Header() {
                                                     {link.submenu.map((subLink, subIndex) => (
                                                         <li key={subIndex}>
                                                             <Link
+                                                            
                                                                 className={`block py-[10px] px-[24px] rounded-full text-sm hover:bg-[#f2e1b561] ${isMobileMenuOpen ? "text-gray-600" : ""
                                                                     }`}
                                                                 href={subLink.href}

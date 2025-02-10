@@ -133,7 +133,7 @@ export default function Projects({params}) {
                             <select
                                 value={selectedCategory}
                                 onChange={handleCategoryChange}
-                                className="p-3 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
+                                className="p-3 w-1/2 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
                             >
                                 <option value="">All Categories</option>
                                 {data.map((item) => (
@@ -148,7 +148,7 @@ export default function Projects({params}) {
                             <select
                                 value={selectedStatus}
                                 onChange={handleStatusChange}
-                                className="p-3 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
+                                className="p-3 w-1/2 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
                             >
                                 <option value="">All Status</option>
                                 <option value="Ready to Move">Ready to Move</option>
