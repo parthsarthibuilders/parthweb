@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Logo from '@/public/annother-parth.svg';
-import { ChevronDown, MessageCircle, Headset, Menu, X, Mail, Smartphone, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { ChevronDown, PhoneCall, MessageCircle, Headset, Menu, X, Mail, Smartphone, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import TopBar from "./TopBar";
 import { useSession } from "next-auth/react";
@@ -58,7 +58,7 @@ export default function Header() {
                 title: item.title,
                 href: `/project/${encodeURIComponent(item.slug)}`, // Pass the title as a query parameter
             }))
-            
+
         },
         {
             title: "Career",
@@ -118,7 +118,7 @@ export default function Header() {
                             <Link className="h-[25px]  w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank"><Facebook size={14} /></Link>
                             <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.instagram.com/parthsarthi_jaipur/?__pwa=1#' target="_blank"><Instagram size={14} /></Link>
                             <Link className="h-[25px]  w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.youtube.com/@parthsarthi_jaipur' target="_blank"><Youtube size={14} /></Link>
-                            <Link className="h-[25px]  w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.linkedin.com/company/parth-sarthi-buildestate-private-limited/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BnHRcI0F6TQaKKgocvpmI9w%3D%3D'  target="_blank"><Linkedin size={14} /></Link>
+                            <Link className="h-[25px]  w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.linkedin.com/company/parth-sarthi-buildestate-private-limited/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BnHRcI0F6TQaKKgocvpmI9w%3D%3D' target="_blank"><Linkedin size={14} /></Link>
 
                         </div>
                     </div>
@@ -234,6 +234,18 @@ export default function Header() {
                                                 WhatsApp
                                             </Link>
                                         </li>
+                                        <li>
+                                            <Link
+                                                href="tel:+919024965965"
+                                                passHref
+                                                title="Call Now"
+                                                className="flex underline items-center gap-x-2 p-1 my-1 rounded-lg hover:bg-gray-100 transition duration-200"
+                                            >
+                                                <PhoneCall color="#6cb049" size={18} />
+                                                Call
+                                            </Link>
+                                        </li>
+
                                     </ul>
                                 </div>
 

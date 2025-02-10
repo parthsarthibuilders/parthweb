@@ -27,7 +27,7 @@ export default function Partners() {
                         <div className="col-span-1" key={index}>
                             <div className="border-[0.6px] p-4 h-full bg-white group border-[#dedfdf] rounded-md flex items-center justify-center">
 
-                                <Image alt="" src={imgUrl} className="max-w-full   grayscale group-hover:grayscale-0" width={100} height={100} />
+                                <Image alt="" src={imgUrl} className="max-w-full  " width={100} height={100} />
                             </div>
 
                         </div>
