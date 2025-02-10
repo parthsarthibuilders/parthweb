@@ -131,7 +131,7 @@ export default function Header() {
                 <div className="container w-[90%] mx-auto">
                     <div className="flex justify-between items-center">
                         <div className="col-span-2">
-                            <Link href="/"><Image alt='' src={Logo} className="md:max-w-[90px] max-w-[50px]" /></Link>
+                            <Link href="/"><Image alt='' src={Logo} className="md:max-w-[90px] max-w-[60px]" /></Link>
                         </div>
                         <div className="flex items-center">
 
@@ -191,7 +191,7 @@ export default function Header() {
                                                     {link.submenu.map((subLink, subIndex) => (
                                                         <li key={subIndex}>
                                                             <Link
-                                                            
+
                                                                 className={`block py-[10px] px-[24px] rounded-full text-sm hover:bg-[#f2e1b561] ${isMobileMenuOpen ? "text-gray-600" : ""
                                                                     }`}
                                                                 href={subLink.href}
