@@ -123,7 +123,7 @@ export default function Projects() {
                             <select
                                 value={selectedCategory}
                                 onChange={handleCategoryChange}
-                                className="p-3 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
+                                className="p-3 w-1/2 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
                             >
                                 <option value="">All Categories</option>
                                 {data.map((item) => (
@@ -138,7 +138,7 @@ export default function Projects() {
                             <select
                                 value={selectedStatus}
                                 onChange={handleStatusChange}
-                                className="p-3 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
+                                className="p-3 w-1/2 border border-gray-300 text-sm rounded-full focus:outline-none focus:ring-1 focus:ring-[#DAB221]"
                             >
                                 <option value="">All Status</option>
                                 <option value="Ready to Move">Ready to Move</option>
@@ -150,7 +150,7 @@ export default function Projects() {
                             </select>
                         </div>
                     </div>
-                    <div className="flex flex-wrap mt-4 space-x-2 space-y-2">
+                    <div className="flex flex-wrap lg:mt-4 space-x-2 space-y-2">
                         {selectedCategory && (
                             <div className="bg-yellow-100 text-yellow-600 text-sm px-4 py-2 rounded-full flex items-center space-x-2">
                                 {/* Find the category title based on selectedCategory */}
