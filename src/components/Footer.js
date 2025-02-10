@@ -20,6 +20,22 @@ export default function Footer() {
     const [success, setSuccess] = useState("");
     const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
     const [data, setdata] = useState([]);
+    const [category, setCategory] = useState([]);
+
+    useEffect(() => {
+        const alldata = async () => {
+            try {
+                const response = await axios.get('/api/category');
+                setCategory(response.data.data.slice(0, 5));
+            } catch (error) {
+                console.error('Error fetching data data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        alldata();
+    }, []);
 
     useEffect(() => {
         const alldata = async () => {
@@ -134,7 +150,7 @@ export default function Footer() {
                     <div className="grid md:grid-cols-3 gap-5 grid-cols-1">
                         <div className="col-span-1 flex flex-col md:items-start items-center md:text-start text-center">
                             <Link className="inline-block mb-3" href="/">
-                            <Image alt='' src={Logo} className="max-w-[90px]" />
+                                <Image alt='' src={Logo} className="max-w-[90px]" />
                             </Link>
                             <p className="text-white text-sm mb-3">Parth Sarthi Builders has established itself as a prominent name in the construction and real estate industry in Jaipur over the past two decades with its exceptional development projects.</p>
                             <div className="flex items-center  space-x-2">
@@ -181,10 +197,13 @@ export default function Footer() {
                                 <div className="col-span-1">
                                     <ul className="space-x-1">
                                         <li className="relative">
-                                            <Link className={`py-[8px] flex text-white  px-[12px] rounded-lg text-sm  hover:bg-[#d3e7ff37]`} href="/projects">
-                                                New Launch
-                                            </Link>
+                                            {category.map((data) => (
+                                                <Link key={data._id} className={`py-[8px] flex text-white  px-[12px] rounded-lg text-sm  hover:bg-[#d3e7ff37]`} href={`/project/${data.slug}`}>
+                                                    {data.title}
+                                                </Link>
+                                            ))}
 
+                                            {/* 
                                             <Link className={`py-[8px] flex text-white  px-[12px] rounded-lg text-sm  hover:bg-[#d3e7ff37]`} href="/projects">
                                                 Luxury Projects
                                             </Link>
@@ -196,7 +215,7 @@ export default function Footer() {
                                             </Link>
                                             <Link className={`py-[8px] flex text-white  px-[12px] rounded-lg text-sm  hover:bg-[#d3e7ff37]`} href="/projects">
                                                 Under Construction
-                                            </Link>
+                                            </Link> */}
 
                                         </li>
                                     </ul>
@@ -229,7 +248,7 @@ export default function Footer() {
                                         value={formData.mobile}
                                         onChange={handlePhoneChange}
 
-                                         className="flex-grow  text-sm text-gray-700 placeholder-gray-400 focus:outline-none     rounded-l-md"
+                                        className="flex-grow  text-sm text-gray-700 placeholder-gray-400 focus:outline-none     rounded-l-md"
                                         required
                                     />
                                 </div>
@@ -249,7 +268,7 @@ export default function Footer() {
                         <p className="text-[12px] text-gray-200">Copyright © 2025 parthsarthi.org . All rights reserved.</p>
                     </div>
                 </div>
-                <Whatsapp/>
+                <Whatsapp />
             </footer>
         </>
     )
