@@ -44,7 +44,7 @@ export default function FeaturedCard({ project }) {
                                             <Home size={15} color="white" />
                                         </div>
                                         <p className="text-white text-sm flex font-semibold items-center">
-                                            {`${project.bhk[0].bhk} BHK, ${project.propertyType}`}
+                                            {`${project.bhk[0].bhk} BHK`}
                                         </p>
                                     </p>
                                 )}
