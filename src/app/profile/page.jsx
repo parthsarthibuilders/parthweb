@@ -21,6 +21,10 @@ export default function Page() {
         imageRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
     };
 
+    const foundingYear = 2004;
+    const currentYear = new Date().getFullYear();
+    const yearsInBusiness = currentYear - foundingYear;
+
     return (
         <>
             <div className='bgprofile'>
@@ -30,7 +34,7 @@ export default function Page() {
                             <div className="col-span-1">
                                 <h1 className="border-b-4 font-semibold border-b-[#CC9B18]">Profile</h1>
                                 <p className="text-sm leading-6 font-medium my-3">
-                                    PARTH SARTHI Builder is a reputed Construction and Real Estate Development company based in Jaipur, India, established in 2008. The company has earned trust and recognition in the industry for its high-quality residential projects.
+                                    PARTH SARTHI Builder is a reputed Construction and Real Estate Development company based in Jaipur, India, established in {foundingYear}. The company has earned trust and recognition in the industry for its high-quality residential projects.
                                 </p>
                                 <p className="text-sm leading-6 font-medium">
                                     Known for premium amenities, modern architecture, and strategic locations, PARTH SARTHI Builder focuses on customer satisfaction and ensures timely delivery of its projects. Collaborations with trusted brands like GODREJ, JAQUAR, and HAVELLS for plumbing and electrical needs further enhance the reliability of their developments.
@@ -70,10 +74,10 @@ export default function Page() {
                             <div className="col-span-1 flex flex-col gap-10 lg:justify-end lg:items-end">
                                 <div className="lg:w-64">
                                     <div className="flex items-center gap-1">
-                                        <span className="text-7xl font-semibold">17</span>
+                                        <span className="text-7xl font-semibold">{yearsInBusiness}</span>
                                         <span className="border-b text-[#CC9B18]">YEARS</span>
                                     </div>
-                                    <p className="text-sm font-medium">Building trust and delivering quality projects since 2008.</p>
+                                    <p className="text-sm font-medium">Building trust and delivering quality projects since {foundingYear}.</p>
                                 </div>
 
                                 <div className="lg:w-64">
