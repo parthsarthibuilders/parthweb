@@ -27,7 +27,7 @@ export default function Page({ params }) {
         return (
             <section className="py-4">
                 <div className="container max-w-[90%] mx-auto text-center">
-                    <p className="text-xl font-bold text-gray-600">Loading project details...</p>
+                    <p className="text-xl font-bold text-gray-600">Loading project details... </p>
                     <div className="mt-4">
                         <div className="animate-spin rounded-full border-t-4 border-blue-500 w-16 h-16 mx-auto"></div>
                     </div>

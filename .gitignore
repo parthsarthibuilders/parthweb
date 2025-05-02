@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-.env
+
 
 # testing
 /coverage
@@ -16,7 +16,8 @@
 
 # production
 /build
-
+# environment files
+.env
 # misc
 .DS_Store
 *.pem
