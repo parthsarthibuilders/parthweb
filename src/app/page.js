@@ -23,7 +23,7 @@ export default function Home() {
       <Partners />
       <Reviews />
       <BlogsSection />
-      <Instafeed/>
+      {/* <Instafeed/> */}
     </div>
   );
 }

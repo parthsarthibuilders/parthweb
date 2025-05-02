@@ -171,7 +171,7 @@ export default function Page() {
         const uploadResponse = await axios.post("/api/upload", formDataImage, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        imageUrl = uploadResponse.data.file.secure_url;
+        imageUrl = uploadResponse.data.file;
       }
 
       if (formData.logo) {
@@ -180,7 +180,7 @@ export default function Page() {
         const uploadResponse = await axios.post("/api/upload", formDatalogo, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        logoUrl = uploadResponse.data.file.secure_url;
+        logoUrl = uploadResponse.data.file;
       }
 
 
@@ -196,7 +196,7 @@ export default function Page() {
 
         // Resolve all uploads and collect URLs
         const uploadResponses = await Promise.all(uploadPromises);
-        galleryUrls = uploadResponses.map((res) => res.data.file.secure_url);
+        galleryUrls = uploadResponses.map((res) => res.data.file);
       }
 
       // Handle site plan upload
@@ -206,7 +206,7 @@ export default function Page() {
         const sitePlanResponse = await axios.post("/api/upload", formDataSitePlan, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        sitePlanUrl = sitePlanResponse.data.file.secure_url;
+        sitePlanUrl = sitePlanResponse.data.file;
       }
 
 

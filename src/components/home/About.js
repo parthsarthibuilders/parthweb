@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { PlayCircle } from "lucide-react";
 import Link from "next/link";
-import Partners from "@/components/home/Partners";
 
 
 export default function AboutComponent() {
@@ -40,7 +39,6 @@ export default function AboutComponent() {
             </section>
 
 
-            <Partners />
         </>
     )
 }

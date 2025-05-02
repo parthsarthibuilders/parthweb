@@ -61,7 +61,7 @@ export default function Page() {
                 const uploadResponse = await axios.post("/api/upload", formDataimgurl, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
-                imgurl = uploadResponse.data.file.secure_url;
+                imgurl = uploadResponse.data.file;
             }
 
             const updatedFormData = { ...formData, imgurl };
