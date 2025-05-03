@@ -7,7 +7,7 @@ export default function Cata({ imageUrl, title }) {
     return (
         <Link href="/projects" className="block bg-white duration-300">
             {/* Property Image with Label */}
-            <div className="relative p-0 m-0 rounded-3xl overflow-hidden h-80">
+            <div className="relative p-0 m-0 rounded-3xl overflow-hidden h-72">
                 <Image
                     src={imageUrl}
                     alt="Property Image"
