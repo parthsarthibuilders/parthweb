@@ -300,7 +300,7 @@ export default function Page({ params }) {
         const uploadResponse = await axios.post("/api/upload", formDataImage, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        imageUrl = uploadResponse.data.file.secure_url;
+        imageUrl =  uploadResponse.data.file;
       }
 
 
@@ -310,7 +310,7 @@ export default function Page({ params }) {
         const uploadResponse = await axios.post("/api/upload", formDatalogo, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        logoUrl = uploadResponse.data.file.secure_url;
+        logoUrl =  uploadResponse.data.file;
       }
 
       // Upload new gallery images only
