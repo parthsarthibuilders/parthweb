@@ -19,6 +19,7 @@ export default function Page() {
         title: "",
         slug: "",
         content: "",
+        author: "",
         image: "",
     });
 
@@ -101,7 +102,7 @@ export default function Page() {
             if (response.status === 200) {
                 toast.success("Blog successfully created!");
                 // Clear the form after success
-                setFormData({ title: "", slug: "", content: "", image: "" });
+                setFormData({ title: "", slug: "", content: "", image: "", author: "" });
             }
         } catch (err) {
             console.error("Failed to create page:", err);
@@ -161,6 +162,19 @@ export default function Page() {
                                 value={formData.slug}
                                 onChange={handleChange}
                                 placeholder="Enter Page Slug"
+                                className="block w-full px-2 py-2 text-gray-500 bg-gray-100 border border-gray-200 sm:text-sm"
+                            />
+                        </div>
+                        <div className="sm:col-span-6 col-span-12">
+                            <label htmlFor="author" className="block text-[12px] text-gray-700">
+                                Author Name
+                            </label>
+                            <input
+                                type="text"
+                                name="author"
+                                value={formData.author}
+                                onChange={handleChange}
+                                placeholder="Enter Author Name"
                                 className="block w-full px-2 py-2 text-gray-500 bg-gray-100 border border-gray-200 sm:text-sm"
                             />
                         </div>

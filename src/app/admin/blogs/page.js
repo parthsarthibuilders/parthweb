@@ -148,6 +148,7 @@ export default function Page() {
                         <tr>
                             <th scope="col" className="px-4 font-medium capitalize py-2"> Title</th>
                             <th scope="col" className="px-4 font-medium capitalize py-2">Slug</th>
+                            <th scope="col" className="px-4 font-medium capitalize py-2">Author Name</th>
 
                             <th scope="col" className="px-4 font-medium capitalize py-2">Date</th>
                         </tr>
@@ -182,6 +183,9 @@ export default function Page() {
                                     </td>
                                     <td className="px-4 py-2 text-[12px]">
                                         {item.slug}
+                                    </td>
+                                    <td className="px-4 py-2 text-[12px]">
+                                        {item.author}
                                     </td>
 
                                     <td className="px-4 py-2 text-[12px]">

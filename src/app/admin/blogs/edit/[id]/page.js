@@ -18,6 +18,7 @@ export default function Page({ params }) {
     title: "",
     slug: "",
     content: "",
+    author: "",
     image: "", // Will store the image URL or file
     imageFile: null, // To store the uploaded image file
   });
@@ -78,6 +79,7 @@ export default function Page({ params }) {
           title: res.data.data.title,
           slug: res.data.data.slug,
           content: res.data.data.content,
+          author: red.data.data.author,
           image: res.data.data.image, // Set existing image URL
           imageFile: null, // Reset the file input for new uploads
         });
@@ -115,11 +117,11 @@ export default function Page({ params }) {
       };
 
       // Update blog post
-      const response = await axios.patch(`/api/blogs/update`, { id: id , ...updatedFormData } ); // Assuming you're updating the blog post
+      const response = await axios.patch(`/api/blogs/update`, { id: id, ...updatedFormData }); // Assuming you're updating the blog post
 
       if (response.status === 200) {
         toast.success("Blog successfully updated!");
-        setFormData({ title: "", slug: "", content: "", image: "", imageFile: null });
+        setFormData({ title: "", slug: "", content: "", image: "", author: "", imageFile: null });
         router.push("/admin/blogs"); // Redirect after success
       }
     } catch (err) {
@@ -181,7 +183,20 @@ export default function Page({ params }) {
                 onChange={handleChange}
                 placeholder="Enter Page Slug"
                 className="block w-full px-2 py-2 text-gray-500 bg-gray-100 border border-gray-200 sm:text-sm"
-                
+
+              />
+            </div>
+            <div className="sm:col-span-6 col-span-12">
+              <label htmlFor="author" className="block text-[12px] text-gray-700">
+                Author Name
+              </label>
+              <input
+                type="text"
+                name="author"
+                value={formData.author}
+                onChange={handleChange}
+                placeholder="Enter Author Name"
+                className="block w-full px-2 py-2 text-gray-500 bg-gray-100 border border-gray-200 sm:text-sm"
               />
             </div>
 
@@ -202,7 +217,7 @@ export default function Page({ params }) {
               {/* Show existing image if it exists */}
               {formData.image && !formData.imageFile && (
                 <div className="mb-3">
-                  <Image src={formData.image} alt="Feature" width={100} height={100}  className="h-48 w-48" />
+                  <Image src={formData.image} alt="Feature" width={100} height={100} className="h-48 w-48" />
                 </div>
               )}
 
@@ -221,9 +236,8 @@ export default function Page({ params }) {
             <button
               type="submit"
               disabled={!isFormValid || loading}
-              className={`${
-                !isFormValid || loading ? "bg-gray-400" : "bg-[#29234b]"
-              } text-white w-full font-bold py-2 px-4 rounded-md`}
+              className={`${!isFormValid || loading ? "bg-gray-400" : "bg-[#29234b]"
+                } text-white w-full font-bold py-2 px-4 rounded-md`}
             >
               {loading ? "Submitting..." : "Update Blog"}
             </button>
