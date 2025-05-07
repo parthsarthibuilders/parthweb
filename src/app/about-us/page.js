@@ -3,7 +3,7 @@ export default function AboutUs() {
     return (
         <>
 
-            <AboutComponent />
+            <AboutComponent /> 
         </>
     )
 }
