@@ -316,7 +316,7 @@ export default function Page({ params }) {
       // Upload new gallery images only
       if (formData.gallery) {
         const newGalleryFiles = formData.gallery.filter((item) => item instanceof File);
-
+      
         if (newGalleryFiles.length > 0) {
           const uploadPromises = newGalleryFiles.map((file) => {
             const formDataGallery = new FormData();
@@ -325,15 +325,19 @@ export default function Page({ params }) {
               headers: { "Content-Type": "multipart/form-data" },
             });
           });
-
-          // Resolve all uploads and collect URLs for new files
+      console.log(uploadPromises,"uplod")
           const uploadResponses = await Promise.all(uploadPromises);
-          const newGalleryUrls = uploadResponses.map((res) => res.data.file.secure_url);
-
-          // Combine existing URLs and new URLs
-          galleryUrls = [...galleryUrls.filter((item) => !(item instanceof File)), ...newGalleryUrls];
+          const newGalleryUrls = uploadResponses.map((res) => res.data.file);
+      
+          // Combine non-File (existing) URLs and new uploads
+          const existingUrls = formData.gallery.filter((item) => typeof item === "string");
+          galleryUrls = [...existingUrls, ...newGalleryUrls];
+        } else {
+          // Only existing URLs, no new files
+          galleryUrls = formData.gallery.filter((item) => typeof item === "string");
         }
       }
+      
 
       // Upload site plan if it's a new file
       if (formData.sitePlan instanceof File) {
