@@ -13,19 +13,26 @@ export default function NewLaunches() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        let isMounted = true;
+
         const fetchData = async () => {
             try {
                 const response = await axios.get("/api/projects/fetchnewlaunch/new");
-                setData(response.data.data || []);
+                if (isMounted) {
+                    setData(response.data.data || []);
+                }
             } catch (error) {
                 console.error("Error fetching data:", error);
                 setData([]);
             } finally {
-                setLoading(false);
+                if (isMounted) setLoading(false);
             }
         };
 
         fetchData();
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     const settings = {
@@ -34,37 +41,32 @@ export default function NewLaunches() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 0,
+        arrows: true,
         centerMode: true,
+        centerPadding: "0px",
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
+                    centerMode: false,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    centerMode: false,
                 },
             },
         ],
     };
 
     return (
-        <section className="py-10 bg-gradient-to-br relative overflow-hidden from-[#2d2849] to-[#352d60]">
-            <div className="container flex flex-col items-center max-w-[90%] mx-auto relative">
-                <div className="py-7"></div>
-
-                <p className="lg:text-[100px] text-[60px] absolute top-[0] text-center font-bold text-slate-200 uppercase animate-bounce opacity-10 mx-auto">
+        <section className="py-10 bg-gradient-to-br from-[#2d2849] to-[#352d60] relative overflow-hidden">
+            <div className="container max-w-[90%] mx-auto flex flex-col items-center relative">
+                <div className="py-7" />
+                <p className="lg:text-[100px] text-[60px] absolute top-0 text-center font-bold text-slate-200 uppercase animate-bounce opacity-10 pointer-events-none">
                     New Launches
                 </p>
                 <h2 className="text-3xl text-center mb-10 mt-5 font-bold text-white">
@@ -73,7 +75,7 @@ export default function NewLaunches() {
 
                 {loading ? (
                     <div className="flex justify-center items-center w-full h-48">
-                        <p className="text-lg font-semibold text-gray-500">Loading...</p>
+                        <p className="text-lg font-semibold text-gray-300">Loading...</p>
                     </div>
                 ) : data.length > 0 ? (
                     <div className="w-full">
@@ -96,13 +98,13 @@ export default function NewLaunches() {
                     </div>
                 ) : (
                     <div className="flex justify-center items-center w-full h-48">
-                        <p className="text-lg font-semibold text-gray-500">No Data Available</p>
+                        <p className="text-lg font-semibold text-gray-300">No Data Available</p>
                     </div>
                 )}
 
                 <Link
-                    href={`/projects`}
-                    className="flex py-3 px-10 rounded-full items-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] text-white font-semibold my-3 leading-3 group transition"
+                    href="/projects"
+                    className="flex py-3 px-10 mt-6 rounded-full items-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] text-white font-semibold group transition"
                 >
                     View All
                     <ArrowRight

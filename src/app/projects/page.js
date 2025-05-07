@@ -175,8 +175,7 @@ export default function Projects() {
                                     logo={project.logo}
                                     title={project.title}
                                     location={project.location}
-                                    size={project.projectSize}
-                                    bhk={project.bhk}
+                                   
                                     category={project.category}
                                     keyid={project.slug} />
                             ))

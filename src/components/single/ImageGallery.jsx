@@ -1,15 +1,28 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import Image from 'next/image';
-import Link from 'next/link';
 
 const MyImageGallery = ({ images }) => {
-    // Ensure the images are in the format expected by ImageGallery
-    const galleryItems = images.map(image => ({
+    const [loadedImages, setLoadedImages] = useState([]);
+    const [imageBatch, setImageBatch] = useState(10); // Number of images to load initially
+
+    useEffect(() => {
+        // Initialize with a subset of images for faster load time
+        setLoadedImages(images.slice(0, imageBatch));
+    }, [images, imageBatch]);
+
+    // This function will be called when a slide changes (on user interaction)
+    const handleSlideChange = (currentIndex) => {
+        // Automatically load more images when the user reaches the end of the gallery
+        if (currentIndex === loadedImages.length - 1 && loadedImages.length < images.length) {
+            setImageBatch(prevBatch => prevBatch + 10); // Increase the batch size (e.g., 10 more images)
+        }
+    };
+
+    const galleryItems = loadedImages.map(image => ({
         original: image, // Full image URL
-        thumbnail: image,
+        thumbnail: image, // You can use a different thumbnail image if available
         loading: "lazy"
     }));
 
@@ -23,10 +36,10 @@ const MyImageGallery = ({ images }) => {
                 showIndex={true}
                 autoPlay={false}
                 infinite={true}
-                thumbnailPosition="bottom" // Adjust thumbnail position (top, right, bottom, left)
+                thumbnailPosition="bottom"
                 slideDuration={450}
                 slideInterval={3000}
-                onSlide={(currentIndex) => console.log('Slide to:', currentIndex)} // Handle slide event
+                onSlide={handleSlideChange} // Trigger image loading on slide change
             />
         </div>
     );

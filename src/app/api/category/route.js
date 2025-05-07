@@ -1,50 +1,32 @@
 import dbConnect from "@/lib/dbConnect";
 import ProjectCategoryModel from "@/model/ProjectCategoryModel";
-
+import { NextResponse } from "next/server";
 export async function GET() {
 
     await dbConnect();
 
     try {
+        const data = await ProjectCategoryModel.find({ defaultValue: "category" })
+            .select("title image slug") // Only fetch needed fields
+            .lean(); // Improves performance by returning plain JS objects
 
-        const data = await ProjectCategoryModel.find({ defaultValue: "category" });
-
-        if (!data) {
-            return Response.json(
-                {
-                    message: "Data Not Found in Category!",
-                    success: false
-                },
-                {
-                    status: 404
-                }
-            )
+        if (!data || data.length === 0) {
+            return NextResponse.json(
+                { message: "No categories found", success: false },
+                { status: 404 }
+            );
         }
 
-        return Response.json(
-            {
-                message: "Data All Geted successfully!",
-                success: true,
-                data
-            },
-            {
-                status: 200
-            }
-        )
-
+        return NextResponse.json(
+            { message: "Categories fetched successfully", success: true, data },
+            { status: 200 }
+        );
     } catch (error) {
-        console.log(error);
-
-        return Response.json(
-            {
-                message: "Have an error to Fetch Data",
-                success: false
-            },
-            {
-                status: 500
-            }
-        )
-
+        console.error("GET Error:", error);
+        return NextResponse.json(
+            { message: "Error fetching categories", success: false },
+            { status: 500 }
+        );
     }
 }
 
