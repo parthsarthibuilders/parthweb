@@ -346,7 +346,7 @@ export default function Page({ params }) {
         const sitePlanResponse = await axios.post("/api/upload", formDataSitePlan, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-        sitePlanUrl = sitePlanResponse.data.file.secure_url;
+        sitePlanUrl = sitePlanResponse.data.file;
       }
 
       // Submit updated data
