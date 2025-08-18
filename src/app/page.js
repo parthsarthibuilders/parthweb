@@ -15,6 +15,7 @@ export default function Home() {
 
     <div>
       <BannerVideo />
+    <p>sd</p>
       {/* <Deal /> */}
       <Feature />
       <AboutComponent />
