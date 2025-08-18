@@ -762,7 +762,7 @@ export default function Page({ params }) {
                     Gallery Images
                   </label>
 
-                  {formData.gallery && formData.gallery.length > 0 ? (
+                  {formData.gallery && formData.gallery.length > 0 && (
                     <div className="grid grid-cols-3 gap-4">
                       {formData.gallery.map((image, index) => (
                         <div key={index} className="relative group">
@@ -788,7 +788,7 @@ export default function Page({ params }) {
                         </div>
                       ))}
                     </div>
-                  ) : (
+                  ) }
                     <div className="border border-dashed border-gray-300 p-4 rounded text-center">
                       <input
                         type="file"
@@ -806,7 +806,7 @@ export default function Page({ params }) {
                         Click to upload Gallery Images
                       </label>
                     </div>
-                  )}
+                  
                 </div>
 
 
