@@ -79,7 +79,7 @@ export default function Page({ params }) {
           title: res.data.data.title,
           slug: res.data.data.slug,
           content: res.data.data.content,
-          author: red.data.data.author,
+          author: res.data.data.author,
           image: res.data.data.image, // Set existing image URL
           imageFile: null, // Reset the file input for new uploads
         });
@@ -132,8 +132,8 @@ export default function Page({ params }) {
     }
   };
 
-  const handleContentChange = (value) => {
-    setFormData({ ...formData, content: value });
+   const handleContentChange = (value) => {
+    setFormData((prev) => ({ ...prev, content: value }));
   };
 
   return (
