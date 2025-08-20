@@ -1,49 +1,47 @@
 import dbConnect from "@/lib/dbConnect";
 import BlogModel from "@/model/BlogModel";
+import mongoose from "mongoose";
 
 export async function GET(req, context) {
     await dbConnect();
 
     try {
+        const param = context.params.id; // this can be id or slug
+        let data;
 
-        const id = context.params.id;
+        // check if param is a valid Mongo ObjectId
+        if (mongoose.Types.ObjectId.isValid(param)) {
+            data = await BlogModel.findById(param);
+        } else {
+            data = await BlogModel.findOne({ slug: param });
+        }
 
-        const data = await BlogModel.findOne({slug:id});
-
-        if(!data){
+        if (!data) {
             return Response.json(
                 {
-                    message: "Data Not Found From this ID",
-                    success: false
+                    message: "Data Not Found From this ID/Slug",
+                    success: false,
                 },
-                {
-                    status: 404
-                }
-            )
+                { status: 404 }
+            );
         }
 
         return Response.json(
             {
-                message: "ID got it",
+                message: "Data fetched successfully",
                 success: true,
-                data
+                data,
             },
-            {
-                status: 200
-            }
-        )
-        
+            { status: 200 }
+        );
     } catch (error) {
         console.log(error);
-
         return Response.json(
             {
-                message: "Have an Error to Get Data",
-                success: false
+                message: "Error while fetching data",
+                success: false,
             },
-            {
-                status: 400
-            }
-        )
+            { status: 400 }
+        );
     }
 }
