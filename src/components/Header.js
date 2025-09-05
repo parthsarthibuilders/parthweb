@@ -110,7 +110,7 @@ export default function Header() {
                 status === "authenticated" ? <TopBar /> : ""
             }
 
-            <div className="bg-[#2d2849] py-2">
+            {/* <div className="bg-[#2d2849] py-2">
                 <div className="container w-[90%] mx-auto">
                     <div className="grid sm:grid-cols-2">
                         <div className="col-span-1 flex items-center justify-start space-x-4">
@@ -126,7 +126,7 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <nav className={`z-50 py-2 transition-all duration-300`}>
                 <div className="container w-[90%] mx-auto">
                     <div className="flex justify-between items-center">
@@ -160,7 +160,7 @@ export default function Header() {
                                         onClick={() => link.submenu && toggleSubMenu(index)}
                                     >
                                         <Link
-                                            className={`block py-[11px] px-[26px] rounded-full text-sm ${openSubMenuIndex === index
+                                            className={`flex items-center py-[11px] px-[26px] rounded-full text-lg ${openSubMenuIndex === index
                                                 ? "bg-[#2d2849] text-white"
                                                 : "bg-gray-50 hover:bg-[#f2e1b561]"
                                                 }`}
@@ -207,7 +207,7 @@ export default function Header() {
                                 ))}
                             </ul>
 
-                            <div style={{ background: 'linear-gradient(to right, #DAB221, #B07C0A)' }} className={`ms-3 group relative text-white bg-[#2d2849] flex justify-center items-center h-[40px] w-[40px] rounded-full text-sm`}>
+                            <div style={{ background: 'linear-gradient(to right, #DAB221, #B07C0A)' }} className={`ms-3 md:mt-5 group relative text-white bg-[#2d2849] flex justify-center items-center h-[40px] w-[40px] rounded-full text-sm`}>
                                 <Headset />
 
                                 <div className="absolute hidden group-hover:block top-10 z-20  backdrop-blur-sm text-[#CC9B18] px-2 border rounded-md shadow-md">

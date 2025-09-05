@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PhoneCall, MapPin, Mail, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { PhoneCall, MapPin, Mail, Facebook, Instagram, Smartphone, Youtube, Linkedin } from "lucide-react";
 import Logo from '@/public/Parth sarthi R logo 1.png';
 import Link from "next/link";
 import Image from "next/image";
@@ -106,7 +106,7 @@ export default function Footer() {
                 <div className="container rounded-3xl py-7 bg-gradient-to-br relative from-[#2d2849] to-[#352d60] w-[90%]  mx-auto">
                     <div className="grid lg:grid-cols-3 gap-5">
                         <div className="col-span-1 py-4   flex items-center text-center   flex-col justify-start">
-                            <div className="flex items-center mb-2 justify-center bg-gradient-to-r  animate-bounce from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]">
+                            <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]">
 
                                 <PhoneCall size={30} className=" text-white  " />
 
@@ -116,7 +116,7 @@ export default function Footer() {
 
                         </div>
                         <div className="col-span-1 py-4 flex items-center text-center   flex-col justify-center">
-                            <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px] delay-500 animate-bounce">
+                            <div className="flex items-center mb-2 justify-center bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px] delay-500">
 
                                 <MapPin size={30} className=" text-white  " />
 
@@ -133,7 +133,7 @@ export default function Footer() {
 
                         </div>
                         <div className="col-span-1 py-4 flex items-center text-center   flex-col justify-center">
-                            <div className="flex items-center mb-2 justify-center delay-1000 animate-bounce bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]">
+                            <div className="flex items-center mb-2 justify-center delay-1000 bg-gradient-to-r from-[#DAB221] to-[#B07C0A] rounded-full h-[55px] w-[55px]">
 
                                 <Mail size={30} className=" text-white  " />
 
@@ -152,7 +152,17 @@ export default function Footer() {
                             <Link className="inline-block mb-3" href="/">
                                 <Image alt='' src={Logo} className="max-w-[90px]" />
                             </Link>
-                            <p className="text-white text-sm mb-3">Parth Sarthi Builders has established itself as a prominent name in the construction and real estate industry in Jaipur over the past two decades with its exceptional development projects.</p>
+                            <p className="text-white text-sm mb-2">Parth Sarthi Builders has established itself as a prominent name in the construction and real estate industry in Jaipur over the past two decades with its exceptional development projects.</p>
+                            <div className="col-span-1 flex flex-col md:flex-row mb-2 items-center justify-start gap-2 md:gap-4">
+                                <p className="text-white flex items-center text-sm">
+                                    <Mail size={15} className="me-1" />
+                                    info@parthsarthi.org
+                                </p>
+                                <p className="text-white flex items-center text-sm">
+                                    <Smartphone size={15} className="me-1" />
+                                    +91 9024-965-965
+                                </p>
+                            </div>
                             <div className="flex items-center  space-x-2">
                                 <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank"><Facebook size={14} /></Link>
                                 <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.instagram.com/parthsarthi_jaipur/?__pwa=1#' target="_blank"><Instagram size={14} /></Link>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { PlayCircle } from "lucide-react";
 import Link from "next/link";
-
+import './About.css'
 
 export default function AboutComponent() {
     return (
@@ -32,13 +32,42 @@ export default function AboutComponent() {
                                     <PlayCircle className="text-white w-16 h-16 animate-pulse hover:scale-110 transition-transform duration-300 cursor-pointer" />
                                 </div>
                             </Link>
-        
+
                         </div>
                     </div>
                 </div>
             </section>
 
-
+            <section className="py-16 bg-white">
+                <div className="container max-w-[80%] mx-auto text-center">
+                    <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8">
+                        <div className="">
+                            <h3 className="text-4xl font-bold">35</h3>
+                            <p className="text-sm mt-1">YEARS OF EXCELLENCE</p>
+                        </div>
+                        <div>
+                            <h3 className="text-4xl font-bold">10.5M</h3>
+                            <p className="text-sm mt-1">SQ. FT. DELIVERED</p>
+                        </div>
+                        <div>
+                            <h3 className="text-4xl font-bold">35</h3>
+                            <p className="text-sm mt-1">PROJECTS</p>
+                        </div>
+                        <div>
+                            <h3 className="text-4xl font-bold">2.6M</h3>
+                            <p className="text-sm mt-1">SQ. FT. UNDER DEVELOPMENT</p>
+                        </div>
+                    </div>
+                    <div className="text-center">
+                        <h4 className="text-2xl font-semibold mb-3">35+ Years Of Experience In Redefining Real Estate For Aspirational Living</h4>
+                        <p className="text-sm font-light max-w-3xl mx-auto leading-relaxed">
+                            The journey of Mahima Group has been both iconic and happening. The group has spread its wings in all spheres of real estate development and established many benchmarks
+                            of architectural excellence. With many firsts in its portfolio, Mahima is constantly evolving and playing a pivotal role in changing Jaipur’s skyline for better. Today, Mahima is
+                            trusted for better planning, excellent construction quality and on-time delivery.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }
