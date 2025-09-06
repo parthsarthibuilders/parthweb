@@ -40,14 +40,28 @@ export default function Feature() {
     dots: false,
     infinite: true,
     speed: 400,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    lazyLoad: "ondemand", // Load images/components only when needed
+    lazyLoad: "ondemand",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, 
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <section className="py-10">
+    <section className="py-10 px-2 md:px-0">
       <div className="container max-w-[90%] mx-auto">
         <p className="bg-gradient-to-l animate-bounce font-semibold inline-block px-5 py-1 text-xs rounded-full text-white from-[#DAB221] to-[#352d60]">
           ✨Featured
@@ -82,7 +96,7 @@ export default function Feature() {
             <div className="w-full relative">
               <Slider {...settings}>
                 {data.map((item) => (
-                  <div className="items" key={item._id}>
+                  <div className="items px-3" key={item._id}>
                     <FeaturedCard project={item} />
                   </div>
                 ))}
