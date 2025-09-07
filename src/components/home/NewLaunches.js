@@ -78,7 +78,7 @@ export default function NewLaunches() {
                         <p className="text-lg font-semibold text-gray-300">Loading...</p>
                     </div>
                 ) : data.length > 0 ? (
-                    <div className="w-full">
+                    <div className="w-full mt-8 md:mt-0">
                         <Slider {...settings}>
                             {data.map((item, index) => (
                                 <div key={item.slug || index} className="px-2">

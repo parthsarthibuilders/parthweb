@@ -18,6 +18,7 @@ export default function BlogsSection() {
         try {
             const response = await axios.get('/api/blogs/fetchall/blog'); 
             setBlogs(response.data.data);
+            // console.log(response.data.data)
             setLoading(false);
         } catch (error) {
             console.error("Error fetching blogs:", error);
