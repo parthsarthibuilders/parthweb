@@ -195,11 +195,11 @@ export default function AboutComponent() {
                             35+ Years Of Experience In Redefining Real Estate For Aspirational Living
                         </h4>
                         <p className="text-sm font-light max-w-3xl mx-auto leading-relaxed fade-section">
-                            The journey of Mahima Group has been both iconic and happening. The
+                            The journey of Parth Sarthi Builders has been both iconic and happening. The
                             group has spread its wings in all spheres of real estate development
                             and established many benchmarks of architectural excellence. With many
-                            firsts in its portfolio, Mahima is constantly evolving and playing a
-                            pivotal role in changing Jaipur’s skyline for better. Today, Mahima
+                            firsts in its portfolio, Parth Sarthi is constantly evolving and playing a
+                            pivotal role in changing Jaipur’s skyline for better. Today, Parth Sarthi
                             is trusted for better planning, excellent construction quality and
                             on-time delivery.
                         </p>

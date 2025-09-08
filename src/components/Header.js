@@ -207,7 +207,7 @@ export default function Header() {
                                 ))}
                             </ul>
 
-                            <div style={{ background: 'linear-gradient(to right, #DAB221, #B07C0A)' }} className={`ms-3 md:mt-5 group relative text-white bg-[#2d2849] flex justify-center items-center h-[40px] w-[40px] rounded-full text-sm`}>
+                            <div style={{ background: 'linear-gradient(to right, #DAB221, #B07C0A)' }} className={`ms-3 mt-0 md:mt-0 lg:mt-5 group relative text-white bg-[#2d2849] flex justify-center items-center h-[40px] w-[40px] rounded-full text-sm`}>
                                 <Headset />
 
                                 <div className="absolute hidden group-hover:block top-10 z-20  backdrop-blur-sm text-[#CC9B18] px-2 border rounded-md shadow-md">

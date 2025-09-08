@@ -65,11 +65,11 @@ export default function NewLaunches() {
     return (
         <section className="py-10 bg-gradient-to-br from-[#2d2849] to-[#352d60] relative overflow-hidden">
             <div className="container max-w-[90%] mx-auto flex flex-col items-center relative">
-                <div className="py-7" />
-                <p className="lg:text-[100px] text-[60px] absolute top-0 text-center font-bold text-slate-200 uppercase opacity-10 pointer-events-none">
+                <div className="py-4" />
+                {/* <p className="lg:text-[100px] text-[60px] absolute top-0 text-center font-bold text-slate-200 uppercase opacity-10 pointer-events-none">
                     New Launches
-                </p>
-                <h2 className="text-3xl text-center mb-10 mt-5 font-bold text-white">
+                </p> */}
+                <h2 className="text-3xl text-center mb-8 font-bold text-white">
                     New Launches Projects
                 </h2>
 
@@ -78,7 +78,7 @@ export default function NewLaunches() {
                         <p className="text-lg font-semibold text-gray-300">Loading...</p>
                     </div>
                 ) : data.length > 0 ? (
-                    <div className="w-full mt-8 md:mt-0">
+                    <div className="w-full md:mt-0">
                         <Slider {...settings}>
                             {data.map((item, index) => (
                                 <div key={item.slug || index} className="px-2">
