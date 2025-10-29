@@ -1,6 +1,13 @@
 import React from 'react';
 import ContactForm from '@/components/single/ContactFormcopy';
 
+export const metadata = {
+  title: "Contact Parth Sarthi Builders | Get in Touch",
+  description:
+    "Contact Parth Sarthi Builders for inquiries, bookings, or assistance. Visit our office or reach out online to connect with the trusted real estate developers of Jaipur.",
+};
+
+
 export default function page() {
     return (
         <div className=" flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8">

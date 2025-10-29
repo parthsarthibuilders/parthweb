@@ -5,6 +5,13 @@ import axios from "axios"; // Import axios
 import BlogCard from "@/components/card/BlogCard";
 import { ArrowRight } from "lucide-react"; // Assuming you're using lucide-react for icons
 
+export const metadata = {
+  title: "Parth Sarthi Blog | Real Estate Insights & Updates",
+  description:
+    "Read the latest news, market trends, and real estate insights from Parth Sarthi Builders. Stay updated about premium properties and lifestyle in Jaipur.",
+};
+
+
 export default function Page() {
     const [isMounted, setIsMounted] = useState(false);
     const [blogs, setBlogs] = useState([]);

@@ -10,6 +10,13 @@ import Reviews from "@/components/home/Reviews";
 import BlogsSection from "@/components/home/BlogsSection";
 import Instafeed from "@/components/home/Instafeed";
 
+export const metadata = {
+  title: "Parth Sarthi | Trusted & Best Real Estate Builders in Jaipur",
+  description:
+    "Parth Sarthi offers luxury 2, 3 & 4 BHK flats in Jaipur. Explore premium residential properties by trusted real estate developers in prime locations.",
+};
+
+
 export default function Home() {
   return (
 

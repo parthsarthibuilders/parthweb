@@ -2,6 +2,14 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import Logo from '@/public/annother-parth.svg';
+
+export const metadata = {
+  title: "Our Vision | Parth Sarthi Real Estate Builders Jaipur",
+  description:
+    "Our vision is to build sustainable, modern, and high-quality real estate developments that enhance lifestyle and promote smart living in Jaipur.",
+};
+
+
 export default function Page() {
     const imageRef = useRef(null);
 

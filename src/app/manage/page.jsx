@@ -3,6 +3,13 @@ import Image from 'next/image';
 import Image1 from '@/public/WhatsApp Image 2025-01-23 at 14.15.58_0e1230ef.webp';
 import Image2 from '@/public/WhatsApp Image 2025-01-23 at 14.15.58_8df28691 (2).jpg';
 
+export const metadata = {
+  title: "Management | Parth Sarthi Real Estate Developers Jaipur",
+  description:
+    "Meet the expert management team of Parth Sarthi, leading the real estate industry in Jaipur with experience, innovation, and customer-focused leadership.",
+};
+
+
 export default function Page() {
     return (
         <>

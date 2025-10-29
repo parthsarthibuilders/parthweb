@@ -3,6 +3,13 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import Logo from '@/public/annother-parth.svg';
 
+export const metadata = {
+  title: "Parth Sarthi | Top Real Estate Builders in Jaipur",
+  description:
+    "Parth Sarthi is a top real estate developer in Jaipur offering premium residential and commercial projects with luxury features and prime connectivity.",
+};
+
+
 export default function Page() {
     const imageRef = useRef(null);
 
