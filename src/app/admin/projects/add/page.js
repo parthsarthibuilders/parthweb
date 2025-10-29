@@ -18,7 +18,7 @@ export default function Page() {
   const [formData, setFormData] = useState({
     category: "",
     semifurnishedprice: "",
-    fullfurnishedprice:"",
+    fullfurnishedprice: "",
     title: "",
     slug: "",
     content: "",
@@ -226,7 +226,7 @@ export default function Page() {
         setFormData({
           category: "",
           semifurnishedprice: "",
-          fullfurnishedprice:"",
+          fullfurnishedprice: "",
           title: "",
           slug: "",
           content: "",
@@ -570,7 +570,7 @@ export default function Page() {
                         type="file"
                         id="gallery"
                         name="gallery"
-                       accept="application/pdf,image/*,image/heic"
+                        accept="application/pdf,image/*,image/heic"
                         onChange={handleFileChange}
                         multiple
                         className="hidden"
@@ -781,7 +781,7 @@ export default function Page() {
 
               <div className="sm:col-span-6 col-span-12">
                 <label htmlFor="semifurnishedprice" className="block text-[12px] text-gray-700">
-                Semi Furnished price <span className=" text-red-600">*</span>
+                  Semi Furnished price <span className=" text-red-600">*</span>
                 </label>
                 <input
                   type="number"
@@ -795,7 +795,7 @@ export default function Page() {
 
               <div className="sm:col-span-6 col-span-12">
                 <label htmlFor="fullfurnishedprice" className="block text-[12px] text-gray-700">
-                Full Furnished price <span className=" text-red-600">*</span>
+                  Full Furnished price <span className=" text-red-600">*</span>
                 </label>
                 <input
                   type="number"
