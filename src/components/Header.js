@@ -26,6 +26,7 @@ export default function Header() {
         const alldata = async () => {
             try {
                 const response = await axios.get('/api/category');
+                console.log(response.data.data)
                 setCategory(response.data.data);
             } catch (error) {
                 console.error('Error fetching data data:', error);
@@ -54,7 +55,7 @@ export default function Header() {
         {
             title: "Our Projects",
             href: "#",
-            submenu: category.map((item) => ({
+            submenu: category.slice(0, 5).map((item) => ({
                 title: item.title,
                 href: `/project/${encodeURIComponent(item.slug)}`, // Pass the title as a query parameter
             }))
