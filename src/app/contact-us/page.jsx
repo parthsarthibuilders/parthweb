@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Contact Parth Sarthi Builders | Get in Touch",
   description:
-    "Contact Parth Sarthi Builders for inquiries, bookings, or assistance. Visit our office or reach out online to connect with the trusted real estate developers of Jaipur.",
+    "Reach out to Parth Sarthi Builders for inquiries, feedback, or property assistance. Visit our Jaipur office or contact us online anytime.",
 };
 
 import Contact from "./Contact";

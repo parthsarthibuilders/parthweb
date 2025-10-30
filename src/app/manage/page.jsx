@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Management | Parth Sarthi Real Estate Developers Jaipur",
   description:
-    "Meet the expert management team of Parth Sarthi, leading the real estate industry in Jaipur with experience, innovation, and customer-focused leadership.",
+    "Meet the experienced management team of Parth Sarthi, leading Jaipur’s real estate growth with innovation, transparency, and dedication.",
 };
 
 import Management from "./Management";

@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Our Vision | Parth Sarthi Real Estate Builders Jaipur",
   description:
-    "Our vision is to build sustainable, modern, and high-quality real estate developments that enhance lifestyle and promote smart living in Jaipur.",
+    "At Parth Sarthi, our vision is to create modern, sustainable, and high-quality real estate projects that redefine urban living in Jaipur.",
 };
 
 import Vision from "./Vision";

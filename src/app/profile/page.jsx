@@ -1,7 +1,7 @@
 export const metadata = {
     title: "Parth Sarthi | Top Real Estate Builders in Jaipur",
     description:
-        "Parth Sarthi is a top real estate developer in Jaipur offering premium residential and commercial projects with luxury features and prime connectivity.",
+        "Parth Sarthi, one of the top real estate developers in Jaipur, delivering premium residential and commercial projects with quality and trust.",
 };
 
 import ProfileClient from "./ProfileClient";
