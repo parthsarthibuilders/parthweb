@@ -58,24 +58,39 @@ export default function SingleBlog({ params }) {
         </div>
       </section>
 
-      <section className="py-8">
-        <div className="container max-w-[80%] mx-auto">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">{blog.title}</h1>
-          <p className="text-sm text-gray-500 mb-6">By {blog.author || "Unknown Author"}</p>
-          <Image
-            src={blog.image}
-            height={500}
-            width={800}
-            alt={blog.title}
-            className="rounded-lg shadow-md mx-auto"
-          />
-          <article className="mt-6 text-gray-700 leading-relaxed">
-            <div className=''
-              dangerouslySetInnerHTML={{ __html: blog.content }}>
-            </div>
-          </article>
-        </div>
-      </section>
+      <main className="py-10">
+        <article className="container max-w-[80%] mx-auto">
+          <header className="mb-6">
+            <h1 className="text-3xl font-extrabold text-gray-900 mb-2">{blog.title}</h1>
+            <p className="text-sm text-gray-500">
+              By {blog.author || "Unknown Author"} ·{" "}
+              <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
+            </p>
+          </header>
+
+          {blog.image && (
+            <Image
+              src={blog.image}
+              height={500}
+              width={800}
+              alt={blog.title}
+              className="rounded-lg shadow-md mx-auto mb-8"
+            />
+          )}
+
+          <section
+            className="prose prose-lg max-w-none text-gray-800 leading-relaxed 
+            prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl 
+            prose-h3:text-xl prose-h4:text-lg prose-p:my-3 prose-ul:my-2 prose-ol:my-2 
+            prose-li:marker:text-gray-500 prose-img:rounded-lg prose-img:shadow-md"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          ></section>
+
+          <footer className="mt-10 border-t border-gray-200 pt-6 text-sm text-gray-500">
+            <p>Tags: {blog.tags?.join(", ") || "Real Estate, Jaipur, Builders"}</p>
+          </footer>
+        </article>
+      </main>
     </>
   );
 }
