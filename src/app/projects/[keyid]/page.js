@@ -106,33 +106,38 @@ export default function SingleProject({ params }) {
 
     if (project?.possessionStatus === "Coming Soon") {
         return (
-            <section className="flex justify-center relative py-5 ">
-                <div className="relative w-full max-w-4xl">
-                    {/* Property Image */}
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <section className="flex justify-center relative py-10">
+                <div className="relative w-full max-w-5xl px-4">
+                    {/* Property Image with Overlays */}
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg">
                         <Image
-                            src={project?.image} // Replace with your image field in the project object
+                            src={project?.image}
                             alt={project?.name}
                             width={1200}
                             height={800}
-                            className="object-cover w-full h-[400px] sm:h-[500px]"
+                            className="object-cover w-full h-[420px] sm:h-[520px] rounded-2xl"
                             priority
                         />
-                        {/* Overlay for Property Title */}
-                        <div className="absolute top-4 left-4 bg-black/70 text-white p-3 rounded-lg shadow-md">
-                            <h2 className="text-2xl font-semibold">{project?.title}</h2>
-                        </div>
-                        {/* Main Overlay */}
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <h1 className="text-6xl font-extrabold text-[white] animate-bounce tracking-wide">
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+                        {/* Coming Soon Text */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                            <h1 className="text-5xl sm:text-6xl font-extrabold text-white tracking-wide animate-bounce">
                                 Coming Soon 🚀
                             </h1>
+                            <p className="text-[#DAB221] mt-4 text-lg sm:text-xl animate-pulse">
+                                ✨ Stay Excited!
+                            </p>
                         </div>
                     </div>
 
-                    {/* Stay Excited Message */}
-                    <div className="absolute bottom-8 left-8 flex gap-2 items-center text-sm text-[#DAB221]">
-                        <span className="animate-pulse">✨ Stay excited!</span>
+                    {/* Property Info */}
+                    <div className="mt-6 text-center">
+                        <h2 className="text-3xl font-bold text-[#2d2849]">{project?.title}</h2>
+                        <p className="text-gray-500 mt-1 text-lg font-medium">
+                            {project?.location}
+                        </p>
                     </div>
                 </div>
             </section>
@@ -141,38 +146,43 @@ export default function SingleProject({ params }) {
 
     if (project?.possessionStatus === "Sold Out" && filteredImages?.length < 2) {
         return (
-            <section className="flex justify-center relative py-5 ">
-                <div className="relative w-full max-w-4xl">
-                    {/* Property Image */}
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <section className="flex justify-center relative py-10">
+                <div className="relative w-full max-w-5xl px-4">
+                    {/* Property Image with Overlays */}
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg">
                         <Image
-                            src={project?.image} // Replace with your image field in the project object
+                            src={project?.image}
                             alt={project?.name}
                             width={1200}
                             height={800}
-                            className="object-cover w-full h-[400px] sm:h-[500px]"
+                            className="object-cover w-full h-[420px] sm:h-[520px] rounded-2xl"
                             priority
                         />
-                        {/* Overlay for Property Title */}
-                        <div className="absolute top-4 left-4 bg-black/70 text-white p-3 rounded-lg shadow-md">
-                            <h2 className="text-2xl font-semibold">{project?.title}</h2>
-                        </div>
-                        {/* Main Overlay */}
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <h1 className="text-6xl font-extrabold text-[white] animate-bounce tracking-wide">
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+                        {/* Sold Out Text */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                            <h1 className="text-5xl sm:text-6xl font-extrabold text-white tracking-wide animate-bounce drop-shadow-lg">
                                 Sold Out 🚀
                             </h1>
+                            <p className="text-[#DAB221] mt-4 text-lg sm:text-xl">
+                                Thank you for the amazing response!
+                            </p>
                         </div>
                     </div>
 
-
+                    {/* Property Info */}
+                    <div className="mt-6 text-center">
+                        <h2 className="text-3xl font-bold text-[#2d2849]">{project?.title}</h2>
+                        <p className="text-gray-500 mt-1 text-lg font-medium">
+                            {project?.location}
+                        </p>
+                    </div>
                 </div>
             </section>
         );
     }
-
-
-
 
     if (loading) {
         return (

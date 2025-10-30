@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Breadcrumb from '@/components/Breadcrumb';
-import { Search, X } from 'lucide-react';
+import { Cone, Search, X } from 'lucide-react';
 import New from '@/components/card/new';
 import axios from "axios";
 export default function Projects() {
@@ -17,8 +17,8 @@ export default function Projects() {
     const [loading, setLoading] = useState(true);
 
     const [error, setError] = useState(null);
-   
-  
+
+
     useEffect(() => {
         const alldata = async () => {
             try {
@@ -175,7 +175,7 @@ export default function Projects() {
                                     logo={project.logo}
                                     title={project.title}
                                     location={project.location}
-                                   
+
                                     category={project.category}
                                     keyid={project.slug} />
                             ))
