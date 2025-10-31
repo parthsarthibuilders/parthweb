@@ -28,6 +28,9 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "Z_q8b3pRxldxIDm8F5hatsIQW3wxeYutrIP0QheU6Zg",
+  }
 };
 
 export default function RootLayout({ children }) {
@@ -67,6 +70,23 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(schemaData),
+          }}
+        />
+
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-56EG8YW259"
+        ></script>
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-56EG8YW259');
+            `,
           }}
         />
       </body>
