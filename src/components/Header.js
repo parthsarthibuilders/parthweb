@@ -26,7 +26,6 @@ export default function Header() {
         const alldata = async () => {
             try {
                 const response = await axios.get('/api/category');
-                console.log(response.data.data)
                 setCategory(response.data.data);
             } catch (error) {
                 console.error('Error fetching data data:', error);

@@ -164,10 +164,10 @@ export default function Footer() {
                                 </p>
                             </div>
                             <div className="flex items-center  space-x-2">
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank"><Facebook size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.instagram.com/parthsarthi_jaipur/?__pwa=1#' target="_blank"><Instagram size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.youtube.com/@parthsarthi_jaipur' target="_blank"><Youtube size={14} /></Link>
-                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.linkedin.com/company/parth-sarthi-buildestate-private-limited/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BnHRcI0F6TQaKKgocvpmI9w%3D%3D' target="_blank"><Linkedin size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.facebook.com/parthsarthijaipur' target="_blank" rel="noopener noreferrer"><Facebook size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.instagram.com/parthsarthi_jaipur/?__pwa=1#' target="_blank" rel="noopener noreferrer"><Instagram size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.youtube.com/@parthsarthi_jaipur' target="_blank" rel="noopener noreferrer"><Youtube size={14} /></Link>
+                                <Link className="h-[25px] w-[25px] bg-[#CC9B18] rounded-[4px] text-white flex items-center justify-center" href='https://www.linkedin.com/company/parth-sarthi-buildestate-private-limited/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BnHRcI0F6TQaKKgocvpmI9w%3D%3D' target="_blank" rel="noopener noreferrer"><Linkedin size={14} /></Link>
 
                             </div>
                         </div>

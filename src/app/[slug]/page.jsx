@@ -1,84 +1,65 @@
-"use client"
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
-import Image from 'next/image';
-export default function Page({ params }) {
-    const slug = params.slug;
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+
+export default function ProjectPage() {
+    const { slug } = useParams();
+    const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [data, setData] = useState("")
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        const fetchProjectData = async () => {
+        async function fetchProject() {
             try {
-                const response = await axios.get(`/api/pages/single-byslug/${slug}`);
-                setData(response.data.data);
+                const res = await fetch(`/api/projects/${slug}`);
+                if (!res.ok) throw new Error("Not found");
+                const data = await res.json();
+                if (!data) setNotFound(true);
+                else setProject(data);
             } catch (err) {
-                setError("Failed to fetch project data.");
+                setNotFound(true);
             } finally {
                 setLoading(false);
             }
-        };
-
-        fetchProjectData();
+        }
+        fetchProject();
     }, [slug]);
 
-    if (loading) {
+    if (loading)
         return (
-            <section className="py-4">
-                <div className="container max-w-[90%] mx-auto text-center">
-                    <p className="text-xl font-bold text-gray-600">Loading project details... </p>
-                    <div className="mt-4">
-                        <div className="animate-spin rounded-full border-t-4 border-blue-500 w-16 h-16 mx-auto"></div>
-                    </div>
-                </div>
-            </section>
+            <div className="flex flex-col items-center justify-center h-screen">
+                <div className="animate-spin rounded-full border-t-4 border-[#CC9B18] w-16 h-16 mb-4"></div>
+                <p className="text-lg font-medium text-gray-600">Loading...</p>
+            </div>
         );
-    }
 
-    if (error) {
+    if (notFound)
         return (
-            <section className="py-4">
-                <div className="container max-w-[90%] mx-auto text-center">
-                    <p className="text-xl font-bold text-red-600">{error}</p>
-                </div>
-            </section>
+            <div className="flex flex-col items-center justify-center h-screen text-center px-6">
+                <h1 className="text-[7rem] md:text-[9rem] font-extrabold text-[#CC9B18] drop-shadow-md leading-none">
+                    404
+                </h1>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
+                    Page Not Found
+                </h2>
+                <p className="text-gray-600 mt-3 max-w-md mx-auto">
+                    The page you’re looking for doesn’t exist or has been moved.
+                </p>
+                <Link
+                    href="/"
+                    className="inline-block mt-4 px-6 py-3 bg-[#CC9B18] text-white text-lg font-medium rounded-full shadow-md hover:bg-[#b88915] transition-all duration-300"
+                >
+                    Go Back Home
+                </Link>
+            </div>
         );
-    }
+
     return (
-        <>
-            <section className="py-8">
-                <title>{data.seoTitle}</title>
-                <div className="container max-w-[80%] mx-auto">
-
-                    <h1 className="text-3xl font-bold text-gray-800 mb-4">{data.title}</h1>
-
-
-                    {data.image && (
-                        <div className="mb-6">
-                            <Image
-                                src={data.image}
-                                alt={data.title}
-                                height={200}
-                                width={200}
-                                className="w-full h-auto rounded-lg shadow-lg"
-                            />
-                        </div>
-                    )}
-
-
-                    {data.content && (
-                        <div className=''
-                            dangerouslySetInnerHTML={{ __html: data.content }}>
-                        </div>
-                    )}
-
-
-
-
-
-                </div>
-            </section>
-        </>
-    )
+        <div className="p-6 max-w-3xl mx-auto">
+            <h1 className="text-4xl font-bold mb-4 text-gray-900">{project.title}</h1>
+            <p className="text-gray-700 leading-relaxed">{project.description}</p>
+        </div>
+    );
 }
