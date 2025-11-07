@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import parse from "html-react-parser";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export default function SingleBlog({ params }) {
@@ -23,7 +24,6 @@ export default function SingleBlog({ params }) {
         setLoading(false);
       }
     };
-
     fetchBlogData();
   }, [slug]);
 
@@ -31,7 +31,9 @@ export default function SingleBlog({ params }) {
     return (
       <section className="py-8">
         <div className="container max-w-[90%] mx-auto text-center">
-          <p className="text-xl font-bold text-gray-600">Loading blog details...</p>
+          <p className="text-xl font-bold text-gray-600">
+            Loading blog details...
+          </p>
           <div className="mt-4">
             <div className="w-16 h-16 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin mx-auto"></div>
           </div>
@@ -61,7 +63,9 @@ export default function SingleBlog({ params }) {
       <main className="py-10">
         <article className="container max-w-[80%] mx-auto">
           <header className="mb-6">
-            <h1 className="text-3xl font-extrabold text-gray-900 mb-2">{blog.title}</h1>
+            <h1 className="text-3xl font-extrabold text-gray-900 mb-2">
+              {blog.title}
+            </h1>
             <p className="text-sm text-gray-500">
               By {blog.author || "Unknown Author"} ·{" "}
               <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
@@ -79,15 +83,18 @@ export default function SingleBlog({ params }) {
           )}
 
           <section
-            className="prose prose-lg max-w-none text-gray-800 leading-relaxed 
-            prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl 
-            prose-h3:text-xl prose-h4:text-lg prose-p:my-3 prose-ul:my-2 prose-ol:my-2 
-            prose-li:marker:text-gray-500 prose-img:rounded-lg prose-img:shadow-md"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          ></section>
+            className="prose prose-lg max-w-none text-gray-800 leading-relaxed
+              prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl
+              prose-h3:text-xl prose-h4:text-lg prose-p:my-3 prose-ul:my-2 prose-ol:my-2
+              prose-li:marker:text-gray-500 prose-img:rounded-lg prose-img:shadow-md"
+          >
+            {blog.content ? parse(blog.content) : "No content available."}
+          </section>
 
           <footer className="mt-10 border-t border-gray-200 pt-6 text-sm text-gray-500">
-            <p>Tags: {blog.tags?.join(", ") || "Real Estate, Jaipur, Builders"}</p>
+            <p>
+              Tags: {blog.tags?.join(", ") || "Real Estate, Jaipur, Builders"}
+            </p>
           </footer>
         </article>
       </main>
