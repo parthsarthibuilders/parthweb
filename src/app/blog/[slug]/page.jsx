@@ -91,11 +91,11 @@ export default function SingleBlog({ params }) {
             {blog.content ? parse(blog.content) : "No content available."}
           </section>
 
-          <footer className="mt-10 border-t border-gray-200 pt-6 text-sm text-gray-500">
+          {/* <footer className="mt-10 border-t border-gray-200 pt-6 text-sm text-gray-500">
             <p>
               Tags: {blog.tags?.join(", ") || "Real Estate, Jaipur, Builders"}
             </p>
-          </footer>
+          </footer> */}
         </article>
       </main>
     </>
