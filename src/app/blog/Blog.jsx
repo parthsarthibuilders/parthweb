@@ -14,9 +14,9 @@ export default function Blog() {
     const fetchBlogs = async () => {
         try {
             const response = await axios.get("/api/blogs/fetchall/blog");
-            // const reversedBlogs = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            const reversedBlogs = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
             setBlogs(reversedBlogs);
-            console.log("Fetched blogs:", response.data.data);
+            // console.log("Fetched blogs:", response.data.data);
         } catch (error) {
             console.error("Error fetching blogs:", error);
             setError("Failed to load blogs. Please try again later.");
