@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import axios from "axios"; // Import axios
+import axios from "axios";
 import BlogCard from "@/components/card/BlogCard";
-import { ArrowRight } from "lucide-react"; // Assuming you're using lucide-react for icons
+import { ArrowRight } from "lucide-react";
 
 export default function Blog() {
     const [isMounted, setIsMounted] = useState(false);
@@ -14,7 +14,9 @@ export default function Blog() {
     const fetchBlogs = async () => {
         try {
             const response = await axios.get("/api/blogs/fetchall/blog");
-            setBlogs(response.data.data);
+            // const reversedBlogs = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            setBlogs(reversedBlogs);
+            console.log("Fetched blogs:", response.data.data);
         } catch (error) {
             console.error("Error fetching blogs:", error);
             setError("Failed to load blogs. Please try again later.");
