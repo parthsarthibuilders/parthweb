@@ -87,8 +87,15 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54B2BSRQ"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-54B2BSRQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
 
         {/* <!-- Google tag (gtag.js) --> */}
         <script
