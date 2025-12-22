@@ -25,7 +25,7 @@ export default function New({ imageUrl, logo, status, title, location, size, bhk
             <div className="p-4">
                 <div className=' flex  gap-4'>
                     <div className="bg-white rounded-md inline-block ">
-                        <Image src={logo} width={100} height={100} alt="ParthSarthi Logos" className="max-h-[50px] w-auto" />
+                        <Image src={logo} width={100} height={100} priority alt="ParthSarthi Logos" className="max-h-[50px] w-auto" />
                     </div>
                     <div>
 
