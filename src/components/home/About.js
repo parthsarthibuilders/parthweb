@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PlayCircle } from "lucide-react";
 import videoImg from "@/public/Parth-Crown-1-1024x1024.jpg";
 import "./About.css";
+import TeamSection from "./TeamSection";
 
 const useCountUp = ({ end, duration = 1000, isInView }) => {
     const [count, setCount] = useState(0);
@@ -176,6 +177,8 @@ export default function AboutComponent() {
                 </div>
             </section>
 
+            <TeamSection />
+
             <section ref={ref} className="py-16 bg-white">
                 <div className="container max-w-[80%] mx-auto text-center">
                     <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8">
@@ -190,7 +193,7 @@ export default function AboutComponent() {
                         ))}
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-center mt-5 lg:mt-10">
                         <h4 className="text-2xl font-semibold mb-3 fade-section">
                             35+ Years Of Experience In Redefining Real Estate For Aspirational Living
                         </h4>
