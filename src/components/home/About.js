@@ -177,7 +177,7 @@ export default function AboutComponent() {
                 </div>
             </section>
 
-            <TeamSection />
+            {/* <TeamSection /> */}
 
             <section ref={ref} className="py-16 bg-white">
                 <div className="container max-w-[80%] mx-auto text-center">
