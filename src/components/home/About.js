@@ -177,11 +177,11 @@ export default function AboutComponent() {
                 </div>
             </section>
 
-            {/* <TeamSection /> */}
+            <TeamSection />
 
-            <section ref={ref} className="py-16 bg-white">
+            <section ref={ref} className="pb-16 pt-10 bg-white">
                 <div className="container max-w-[80%] mx-auto text-center">
-                    <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8">
+                    <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-10">
                         {statsData.map((stat, idx) => (
                             <StatItem
                                 key={idx}
@@ -193,11 +193,11 @@ export default function AboutComponent() {
                         ))}
                     </div>
 
-                    <div className="text-center mt-5 lg:mt-10">
-                        <h4 className="text-2xl font-semibold mb-3 fade-section">
+                    <div className="text-center mt-10 md:mt-30">
+                        <h4 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-3 fade-section">
                             35+ Years Of Experience In Redefining Real Estate For Aspirational Living
                         </h4>
-                        <p className="text-sm font-light max-w-3xl mx-auto leading-relaxed fade-section">
+                        <p className="text-md font-light max-w-4xl mx-auto leading-relaxed fade-section">
                             The journey of Parth Sarthi Builders has been both iconic and happening. The
                             group has spread its wings in all spheres of real estate development
                             and established many benchmarks of architectural excellence. With many
