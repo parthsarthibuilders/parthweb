@@ -38,7 +38,7 @@ export default function LeadershipPreview() {
               Driving Vision & Strategy
             </h3>
 
-            <p className="text-gray-700 leading-relaxed mb-8 max-w-lg">
+            <p className="font-light leading-relaxed mb-8 max-w-lg">
               Our leadership team brings together experience, innovation, and a
               clear vision for the future. With a strong focus on strategic
               thinking and impactful decision-making, they guide our
