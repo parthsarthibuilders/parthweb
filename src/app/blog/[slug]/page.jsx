@@ -27,6 +27,8 @@ export default function SingleBlog({ params }) {
     fetchBlogData();
   }, [slug]);
 
+  console.log(blog);
+
   if (loading) {
     return (
       <section className="py-8">
@@ -83,10 +85,16 @@ export default function SingleBlog({ params }) {
           )}
 
           <section
-            className="prose prose-lg max-w-none text-gray-800 leading-relaxed
-              prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl
-              prose-h3:text-xl prose-h4:text-lg prose-p:my-3 prose-ul:my-2 prose-ol:my-2
-              prose-li:marker:text-gray-500 prose-img:rounded-lg prose-img:shadow-md"
+            className="
+    prose prose-lg max-w-none
+    text-gray-800 leading-relaxed
+    prose-headings:font-semibold
+    prose-h2:mt-8 prose-h2:mb-4
+    prose-h3:mt-6 prose-h3:mb-3
+    prose-p:my-4
+    prose-ul:my-4 prose-ul:pl-6
+    prose-li:my-2
+  "
           >
             {blog.content ? parse(blog.content) : "No content available."}
           </section>

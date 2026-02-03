@@ -276,8 +276,9 @@ export default function Footer() {
                     </div>
                     <div className="border-t mt-10 pt-5 border-t-slate-400 md:text-start text-center">
                         <p className="text-[12px] text-gray-200">
-                            Copyright © 2026 parthsarthi.org. All rights reserved.
+                            Copyright © {new Date().getFullYear()} parthsarthi.org. All rights reserved.
                         </p>
+
 
                         <p className="mt-1 text-[12px] text-gray-400">
                             Managed by{" "}
