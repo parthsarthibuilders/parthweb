@@ -27,7 +27,6 @@ export default function LeadershipPreview() {
       <div className="container px-4 md:max-w-[90%] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
-          {/* Left Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mt-5">
               Meet the Leaders
