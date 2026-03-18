@@ -4,7 +4,6 @@ import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowRight } from "lucide-react";
-import Slider from "react-slick";
 import BlogCard from "../card/BlogCard";
 import axios from "axios";
 
@@ -17,9 +16,9 @@ export default function BlogsSection() {
     try {
       const response = await axios.get("/api/blogs/fetchall/blog");
 
-      const sortedBlogs = response.data.data.sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-      );
+      const sortedBlogs = response.data.data
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 3)
 
       setBlogs(sortedBlogs);
       setLoading(false);
@@ -33,30 +32,6 @@ export default function BlogsSection() {
     setIsMounted(true);
     fetchBlogs();
   }, []);
-
-  // Slider settings
-  var setting5 = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 700,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <section className="bg-[#fff5e4] py-16 px-4 md:px-1">
@@ -81,19 +56,17 @@ export default function BlogsSection() {
           </Link>
         </div>
 
-        <div className="w-full relative">
-          {isMounted && !loading ? (
-            <Slider {...setting5}>
-              {blogs.map((blog) => (
-                <div key={blog._id} className="items px-2">
-                  <BlogCard blog={blog} />
-                </div>
-              ))}
-            </Slider>
-          ) : (
-            <div>Loading...</div>
-          )}
-        </div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogs.map((blog) => (
+              <div key={blog._id}>
+                <BlogCard blog={blog} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -34,6 +34,8 @@ export default function Projects() {
         alldata();
     }, []);
 
+    console.log(data)
+
 
     const fetchprojects = async () => {
         try {

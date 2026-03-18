@@ -97,9 +97,9 @@ export default function AboutComponent() {
     const { ref, isInView } = useIntersectionObserver();
 
     const statsData = [
-        { value: 35, label: "YEARS OF EXCELLENCE", suffix: "+" },
+        { value: 21, label: "YEARS OF EXCELLENCE", suffix: "+" },
         { value: 10.5, label: "SQ. FT. DELIVERED", suffix: "M+" },
-        { value: 35, label: "PROJECTS", suffix: "+" },
+        { value: 700, label: "PROJECTS", suffix: "+" },
         { value: 2.6, label: "SQ. FT. UNDER DEVELOPMENT", suffix: "M+" },
     ];
 
@@ -195,7 +195,7 @@ export default function AboutComponent() {
 
                     <div className="text-center mt-10 md:mt-30">
                         <h4 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-3 fade-section">
-                            35+ Years Of Experience In Redefining Real Estate For Aspirational Living
+                            21+ Years Of Experience In Redefining Real Estate For Aspirational Living
                         </h4>
                         <p className="text-md font-light max-w-4xl mx-auto leading-relaxed fade-section">
                             The journey of Parth Sarthi Builders has been both iconic and happening. The

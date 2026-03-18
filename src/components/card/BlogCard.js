@@ -6,7 +6,7 @@ import { Calendar, ArrowRight, Clock } from "lucide-react";
 
 export default function BlogCard({ blog }) {
   return (
-    <article className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200 max-w-4xl mx-auto">
+    <article className="group cursor-pointer relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200 max-w-4xl mx-auto">
       <Link
         href={`/blog/${blog.slug}`}
         className="cursor-default"
