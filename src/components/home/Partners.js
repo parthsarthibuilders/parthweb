@@ -24,6 +24,17 @@ export default function Partners() {
     'https://www.thereportingtoday.com/wp-content/uploads/2023/11/JSW-Paints-Logo.jpg'
   ];
 
+  const noOptimizeDomains = [
+    "aquaguardindia.com",
+    "upload.wikimedia.org",
+    "www.bangurcement.com",
+    "vectorseek.com",
+  ];
+
+  const shouldUnoptimize = (url) => {
+    return noOptimizeDomains.some((domain) => url.includes(domain));
+  };
+
   return (
     <section className="py-16 bg-gradient-to-r from-[#e6ecfc] to-[#e3ebff]">
       <div className="container flex flex-col items-center max-w-[90%] mx-auto relative">
@@ -52,6 +63,7 @@ export default function Partners() {
                     alt={`Partner ${index + 1}`}
                     width={240}
                     height={160} 
+                    unoptimized={shouldUnoptimize(logo)}
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
