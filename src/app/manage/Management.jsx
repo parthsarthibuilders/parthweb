@@ -10,7 +10,7 @@ export default function Management() {
         {/* Bhagwana Ram Burdak Section */}
         <div className="grid lg:grid-cols-5 gap-4 my-5 border-b pb-10 pt-5 mb-10">
           <div className="lg:col-span-2 flex justify-center lg:justify-start">
-            <Image
+            <img
               src="/owner1.png"
               alt="Bhagwana Ram Burdak"
               priority
@@ -87,7 +87,7 @@ export default function Management() {
             </p>
           </div>
           <div className="lg:col-span-2 flex justify-center lg:justify-end">
-            <Image
+            <img
               src="/owner2.png"
               alt="Megha Ram Burdak"
               priority
