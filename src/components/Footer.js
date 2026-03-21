@@ -112,7 +112,7 @@ export default function Footer() {
 
                             </div>
                             <h4 className="font-semibold text-lg text-white">Phone Number</h4>
-                            <p className=" text-sm text-white">+91 9024 - 965 - 965</p>
+                            <p className=" text-sm text-white">+91 9166 - 149 - 505</p>
 
                         </div>
                         <div className="col-span-1 py-4 flex items-center text-center   flex-col justify-center">
@@ -160,7 +160,7 @@ export default function Footer() {
                                 </p>
                                 <p className="text-white flex items-center text-sm">
                                     <Smartphone size={15} className="me-1" />
-                                    +91 9024-965-965
+                                    +91 9166-149-505
                                 </p>
                             </div>
                             <div className="flex items-center  space-x-2">
