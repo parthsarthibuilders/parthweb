@@ -6,7 +6,8 @@ const leaders = [
   {
     id: 1,
     name: "Bhagwana Ram Burdak",
-    image: "/owner1.png",
+    // image: "/owner1.png",
+    image: "/default.png",
     description:
       "Bhagwana Ram Burdak, the co-founder and driving force behind Parth Sarthi Buildestate Pvt Ltd, is a name synonymous with innovation and resilience in the real estate sector.",
     detailLink: "/leadership/bhagwana-ram-burdak",
@@ -14,7 +15,8 @@ const leaders = [
   {
     id: 2,
     name: "Megha Ram Burdak",
-    image: "/owner2.png",
+    // image: "/owner2.png",
+    image: "/default.png",
     description:
       "Megha Ram Burdak, a trailblazer in the real estate industry, began his journey in 2003 with an ambitious vision to transform the landscape of modern living.",
     detailLink: "/leadership/megha-ram-burdak",

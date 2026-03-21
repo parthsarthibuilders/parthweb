@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Image1 from "@/public/WhatsApp Image 2025-01-23 at 14.15.58_0e1230ef.webp";
-import Image2 from "@/public/WhatsApp Image 2025-01-23 at 14.15.58_8df28691 (2).jpg";
 
 export default function Management() {
   return (
@@ -10,8 +8,9 @@ export default function Management() {
         {/* Bhagwana Ram Burdak Section */}
         <div className="grid lg:grid-cols-5 gap-4 my-5 border-b pb-10 pt-5 mb-10">
           <div className="lg:col-span-2 flex justify-center lg:justify-start">
-            <Image
-              src="/owner1.png"
+            <img
+              // src="/owner1.png"
+              src="/default.png"
               alt="Bhagwana Ram Burdak"
               priority
               width={350}
@@ -87,8 +86,9 @@ export default function Management() {
             </p>
           </div>
           <div className="lg:col-span-2 flex justify-center lg:justify-end">
-            <Image
-              src="/owner2.png"
+            <img
+              // src="/owner2.png"
+              src="/default.png"
               alt="Megha Ram Burdak"
               priority
               width={350}
